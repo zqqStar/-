@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基数</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    do {
+        var num = 0;
+        var kong = "";
+        var sum = 0;
+        var base = prompt("请输入基数");
+        var times = prompt("请输入次数");
+
+
+ 
+        for  (var i = 1; i <= times; i++) {
+
+            kong = base + kong;
+            document.write(kong + "<br>");
+            sum = kong * 1 + sum;
+        }
+        document.write(sum + "<br>");
+        var b = prompt("是否要继续(y/n)");
+    }
+
+    while (b == "y");
+
+</script>
+
+</html>

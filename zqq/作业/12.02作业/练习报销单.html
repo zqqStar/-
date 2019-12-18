@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         main {
+            width: 900px;
+            height: 600px;
+            margin: 100px auto;
+            border: 1px solid black;
+            text-align: center;
+        }
+        table{
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        td {
+            border: 1px solid black;
+            height: 40px;
+            text-align: center;
+            /* padding: 0; */
+        }
+        #d1>td:nth-child(1){
+            width: 240px;
+        }
+        #d1>td:nth-child(2){
+            width: 120px;
+        }
+        #d1>td:nth-child(3){
+            width: 120px;
+        }
+        #d1>td:nth-child(4){
+            width: 120px;
+        }
+        #d1>td:nth-child(5){
+            width: 120px;
+        }
+        .w{
+            width: 120px;
+            border-top: none;
+            border-bottom: none;
+        }
+        #g1{
+            border-collapse: collapse;
+        }
+        #t1{
+            padding: 0;
+
+        }
+        #t1 td:nth-child(1){
+            border-left: none;
+
+        }
+        #t1 td:nth-child(6){
+            border-right: none;
+
+        }
+        
+
+    </style>
+</head>
+<body>
+    <main>
+        <table>
+            <thead>
+                <p>费用报销单</p>
+                <hr>
+                <span>xxx年月日</span>
+                <span>附件</span>
+            </thead>
+            <tbody>
+                <tr id="d1">
+                    <td>&#x3000;费&#x3000;用&#x3000;项&#x3000;目</td>
+                    <td>&#x3000;类&#x3000;别</td>
+                    <td>&#x3000;金&#x3000;额</td>
+                    <td rowspan="2">负责人(签章)</td>
+                    <td rowspan="2"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td rowspan="2">意见</td>
+                    <td rowspan="2"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td rowspan="2">报销人</td>
+                    <td rowspan="2"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>¥</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td colspan="5"></td>
+                </tr>
+                <tr>
+                    <td colspan="5" id="t1">
+                        <table id="g1">
+                            <tr>
+                                <td class="w"></td>
+                                <td class="w"></td>
+                                <td class="w"></td>
+                                <td class="w"></td>
+                                <td class="w"></td>
+                                <td class="w"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+               
+
+
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

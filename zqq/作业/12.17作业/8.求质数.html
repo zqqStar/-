@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求质数</title>
+</head>
+<body>
+    
+</body>
+<script>
+    for( var i=1;i<=23;i++){
+        var zhishu=1;
+        for( var j=2;j<i-1;j++){
+            if(i%j==0){
+                // console.log("b");
+                
+                zhishu=0;
+                break;
+            }
+            
+        }
+        if(zhishu){
+            console.log(i);
+            
+        }
+    }
+
+   
+
+</script>
+</html>

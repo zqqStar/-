@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // var i;
+    // var a;    
+    // var b;
+    // var c;
+    // var i=("a"+"b"+"c")*1;
+    var sum=0;
+    for(var i=100;i<1000;i++){
+        // if((a*1*a*1*a*1)+(b*1*b*1*b*1)+(c*1*c*1*c*1)==i){
+            var ge=i%10;
+            var shi=((i%100)-ge)/10;
+            var bai=((i%1000)-(i%100))/100;
+            sum=ge**3+shi**3+bai**3;
+            if(i==sum)
+            document.write(i+"      ")
+        }
+
+       
+    
+</script>
+</html>

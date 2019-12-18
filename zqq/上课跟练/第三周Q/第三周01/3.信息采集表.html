@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        h1{
+            text-align: center;
+
+        }
+        .infobox{
+            margin: 5px;
+
+        }
+        #education{
+            width: 150px;
+        }
+        #majorlable{
+            vertical-align: top;
+        }
+        #feel{
+            width: 100%;
+            resize: 3vw;
+            text-indent: 2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>河南大学信息采集表</h1>
+    <form action="#">
+        <fieldset>
+            <legend>基本信息</legend>
+            <div class="infobox">
+                <label for="name">姓名:</label>
+                <input type="text" placeholder="请输入全名" id="name" name="username" checked>
+
+            </div>
+            <div class="infobox">
+                <span>性别:</span>
+                <input type="radio" name="gender" checked id="male" value="1">
+                <label for="male">男</label>
+                <input type="radio" name="gender" checked id="female" value="2">
+                <label for="female">女</label>
+
+            </div>
+            <div class="infobox">
+                <label for="userid">身份证号:</label>
+                <input type="text" name="userid" id="userid" checked placeholder="请输入身份证号">
+
+            </div>
+            <hr>
+            <span>
+                爱好
+            </span>
+            <input type="checkbox" name="gender" id="sing" value="1">
+            <label for="sing">唱歌</label>
+            <input type="checkbox" name="gender" id="game" value="2">
+            <label for="game">游戏</label>
+            <input type="checkbox" name="gender" id="dance" value="3">
+            <label for="sing">跳舞</label>
+        </fieldset>
+
+        <fieldset>
+            <div class="infobox">
+                <label for="education">学历</label>
+                <select name="" id="education">
+                    <optgroup label="本科以下">
+                       <option value="1">初中</option>
+                       <option value="2">高中</option>
+                       <option value="3">大专</option>
+
+
+                    </optgroup>
+                    <optgroup label="本科以上">
+                            <option value="4">本科</option>
+                            <option value="5">硕士</option>
+                            <option value="6">博士</option>
+     
+     
+                         </optgroup>
+
+                </select>
+
+            </div>
+            <div class="infobox">
+                <label for="major" id="majorlable">专业课程:</label>
+                <select name="major" id="major" multiple>
+                    <option value="1">html</option>
+                    <option value="2">ios</option>
+                    <option value="3">android</option>
+                    <option value="4">windows</option>
+                    <option value="5">digdata</option>
+                   
+                </select>
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>学习感言</legend>
+            <textarea name="" id="feel" cols="10" rows="5" placeholder="不能少于15个字"></textarea>
+            <input type="submit" value="提交信息" id="submit">
+            <input type="reset" id="reset">
+        </fieldset>
+        <button>提交</button>
+    </form>
+</body>
+</html>

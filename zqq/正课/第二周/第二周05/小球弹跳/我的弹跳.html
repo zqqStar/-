@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        main{
+            width: 800px;
+            height: 500px;
+            background-color: yellow;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+
+        }
+        div{
+            width: 50px;
+            height: 50px;
+            background-image: url(earth.png);
+            background-size: 50px;
+            animation: ani1 10s linear infinite;
+        }
+        @keyframes ani1 {
+            0%{
+               transform: translate(0,0);
+            }
+            10%{
+                transform: translate(0,450px);
+            }
+            20%{
+                transform: translate(0,100px);
+
+            }
+            30%{
+                transform: translate(0,450px);
+
+            }
+            40%{
+                transform: translate(0,200px);
+
+            }
+            50%{
+                transform: translate(0,450px);
+
+            }
+            60%{
+                transform: translate(0,300px);
+
+            }
+            70%{
+                transform: translate(0,450px);
+
+            }
+            80%{
+                transform: translate(0,400px);
+
+            }
+            100%{
+                transform: translate(0,450px);
+
+            }
+
+
+
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+
+        </div>
+    </main>
+</body>
+</html>

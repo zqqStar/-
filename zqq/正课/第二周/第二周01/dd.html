@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: black;
+            height: 100%;
+        }
+       
+        }
+        #dot{
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: calc(50% - 20px/2);
+            left: calc(50% - 20px/2);
+            z-index: 10;
+        }
+        #second{
+            width: 600px;
+            height: 10px;
+            border-radius: calc(10px / 2);
+            position: absolute;
+            /* background-color: red; */
+            top: calc(50% - 10px/2);
+            /* 500-100  500-300 */
+            left: calc(50% - 600px/2);
+            animation: rotate 60s linear infinite;
+              
+        }
+        #second span{
+            width: 350px;
+            height: 3px;
+            background-color: yellow;
+            display: block;
+            /* 10 3.5+3 3.5 */
+            /* 行内元素没办法使用margin */
+            margin-top: 3.5px;
+            border-radius: 1.5px;
+        }
+
+    </style>
+</head>
+<body>
+        <div id="dot"></div>
+        <div id="second">
+            <span></span>
+        </div>
+        <div id="minute">
+            <span></span>
+        </div>
+        <div id="hour">
+            <span></span>
+        </div>
+</body>
+</html>

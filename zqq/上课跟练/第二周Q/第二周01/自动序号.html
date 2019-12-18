@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            counter-reset: num 0;
+        }
+
+        h1 {
+            color: red;
+            counter-increment: num;
+            counter-reset: con 0;
+        }
+
+        h1::before {
+            content: counter(num)".";
+        }
+
+        h2 {
+            color: green;
+            counter-increment: con;
+            counter-reset: zha 0;
+            text-indent: 2em;
+        }
+
+        h2::before {
+            content: counter(num)"."counter(con)".";
+        }
+
+        h3 {
+            counter-increment: zha;
+            text-indent: 4em;
+        }
+
+        h3::before {
+            content: counter(num)"."counter(con)"."counter(zha)".";
+        }
+    </style>
+</head>
+
+<body>
+    <h1>个人信息</h1>
+    <h1>专业技能
+        <h2>前端开发技术
+            <h3>精通HTML5</h3>
+            <h3>熟练掌握CSS3</h3>
+            <h3>完美驾驭javascript</h3>
+        </h2>
+        <h2>IOS开发
+            <h3>objestive-c</h3>
+            <h3>cocoa-Touch</h3>
+        </h2>
+        <h2>游戏技能
+            <h3>魂斗罗1命通关</h3>2
+            <h3>魔兽100级</h3>
+        </h2>
+    </h1>
+    <h1>工作经历
+        <h2>2012-2014年在百度公司当保安
+            <h3>aaa</h3>
+            <h3>bbb</h3>
+            <h3>ccc</h3>
+        </h2>
+        <h2>2014-2015年在腾讯担任前端开发工程师
+            <h3>fff</h3>
+            <h3>hhh</h3>
+        </h2>
+    </h1>
+    <h1>项目经验</h1>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>猜拳</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    var name = prompt("请输入你的姓名");
+    var oppo = prompt("请选择你要挑战的对手(1.特朗普/2.普京)") * 1;
+
+    if (oppo == 1) {
+        var start = prompt("是否要开始游戏?(y/n)");
+
+        while (start == "y") {
+            var self = prompt("请输入你的技能(1/2/3)") * 1;
+            var tlp = Math.random() * 3;
+            tlp = Math.ceil(tlp);
+            if (self == 1) {
+                if (tlp == 1) {
+                    document.write("平局")
+                }
+                if (tlp == 2) {
+                    document.write("特朗普胜")
+                }
+                if (tlp == 3) {
+                    document.write("我赢了")
+                }
+            }
+            if (self == 2) {
+                if (tlp == 1) {
+                    document.write("我赢了")
+                }
+                if (tlp == 2) {
+                    document.write("平局")
+                }
+                if (tlp == 3) {
+                    document.write("特朗普胜")
+                }
+            }
+            if (self == 3) {
+                if (tlp == 1) {
+                    document.write("特朗普胜")
+                }
+                if (tlp == 2) {
+                    document.write("我赢了")
+                }
+                if (tlp == 3) {
+                    document.write("平局")
+                }
+            }
+            start = prompt("是否要继续游戏?(y/n)");
+        }
+    }
+    else if (oppo == 2) {
+        var start = prompt("是否要开始游戏?(y/n)");
+        while (start == "y") {
+
+            var self = prompt("请输入你的技能(1/2/3)") * 1;
+            var tlp = Math.random() * 3;
+            tlp = Math.ceil(tlp);
+            if (self == 1) {
+                if (tlp == 1) {
+                    document.write("平局")
+                }
+                if (tlp == 2) {
+                    document.write("特朗普胜")
+                }
+                if (tlp == 3) {
+                    document.write("我赢了")
+                }
+            }
+            if (self == 2) {
+                if (tlp == 1) {
+                    document.write("我赢了")
+                }
+                if (tlp == 2) {
+                    document.write("平局")
+                }
+                if (tlp == 3) {
+                    document.write("特朗普胜")
+                }
+            }
+            if (self == 3) {
+                if (tlp == 1) {
+                    document.write("特朗普胜")
+                }
+                if (tlp == 2) {
+                    document.write("我赢了")
+                }
+                if (tlp == 3) {
+                    document.write("平局")
+                }
+            }
+            start = prompt("是否要继续游戏?(y/n)");
+        }
+    }
+    else if ((oppo != 1) && (oppo != 2)) {
+        document.write("选择选手出现错误,请退出重登")
+    }
+    
+
+   
+
+</script>
+
+</html>

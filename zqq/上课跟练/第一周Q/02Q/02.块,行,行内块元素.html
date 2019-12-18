@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span {
+            width: 10000px;
+            height: 10000px;
+
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            /* display: inline; */
+        }
+
+        img {
+            width: 200px;
+            height: 100px;
+        }
+
+        main {
+            text-align: center;
+        }
+
+        a {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 元素的分类  3种
+    1.行元素  inlink  常见的有:span  a  b  s  i
+                    特点:①根据内容占据宽高(不独占一行)
+                        ②不可以设置宽高
+                页面布局时:从左往右(当右侧空间不够用时会自动换行)
+    2.块元素  block   常见的元素:div  p  h1  header  hr
+                          特点:①独占一行
+                              ②可以设置宽高
+                              ③在不设置宽高时,宽度继承父元素,高度依据内容自动而定
+                     页面布局:从上往下
+    3.行内块元素  inlink-block  常见元素:img  input  button
+                    特点1.-->
+    <!--  -->
+    <span>111111111111111111111111111111111111111111111111111111</span>
+    <a href="">百度一下</a>
+    <div>222222</div>
+    <!-- img不设置宽高时,按照图片的原始尺寸进行展示
+    页面布局时:从左往右 -->
+    <img src="zy.jpg" alt="">
+    <span>33333</span>
+    <!-- 在父元素中,子元素为行元素或行内块元素,想使子元素居中,可以对父元素设置text-align -->
+    <main>
+        <span>我好可爱呀</span>
+    </main>
+    <!-- 元素的类型可以通过display修改为其他类型 -->
+    <a href="">行元素更改类型</a>
+</body>
+
+</html>

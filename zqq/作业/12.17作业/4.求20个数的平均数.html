@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求平均数</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var i;
+    sum = 0;
+    var average;
+
+    for (i = 0; i < 20; i++) {
+        var num = Math.random() * 30 + 20;
+        num = Math.ceil(num);
+        document.write(num + "  "+"<br>");
+        sum += num;
+        average=sum/20;
+
+    }
+    document.write(sum+"<br>");
+    document.write(average);
+
+
+</script>
+
+</html>

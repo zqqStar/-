@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>课程表</title>
+    <style>
+        #s1 {
+            /* border: 1px solid black; */
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 3px solid green;
+            width: 150px;
+            height: 80px;
+            text-align: center;
+        }
+
+        th {
+            border: 3px solid green;
+
+            background-color: green;
+            height: 80px;
+            color: white;
+        }
+
+        .f1 {
+            border: none;
+        }
+
+        caption {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table id="s1">
+        <thead>
+
+            <caption>HTML5课程表</caption>
+            <th>周一</th>
+            <th>周二</th>
+            <th>周三</th>
+            <th>周四</th>
+            <th>周五</th>
+            <th>周六</th>
+            <th>周日</th>
+        </thead>
+        <tr>
+            <td>HTML5</td>
+            <td>HTML5</td>
+            <td>HTML5</td>
+            <td>HTML5</td>
+            <td>HTML5</td>
+            <td rowspan="2" style="color: red;">自习</td>
+            <td rowspan="3">休息</td>
+        </tr>
+        <tr>
+            <td>HTML5</td>
+            <td>HTML5</td>
+            <td>HTML5</td>
+            <td>HTML5</td>
+            <td>HTML5</td>
+
+        </tr>
+        <tr>
+            <td>HTML5</td>
+            <td>HTML5</td>
+            <td>HTML5</td>
+            <td>HTML5</td>
+            <td>HTML5</td>
+            <td style="color: red;">休息</td>
+
+        </tr>
+        <!-- <tr>
+            <td>HTML5</td>
+            <td>HTML5</td>
+            <td class="f1"></td>
+            <td class="f1"></td>
+            <td class="f1"></td>
+            <td class="f1"></td>
+            <td class="f1"></td>
+
+        </tr> -->
+        <tfoot>
+            <td></td>
+            <td></td>
+        </tfoot>
+    </table>
+
+
+</body>
+
+</html>

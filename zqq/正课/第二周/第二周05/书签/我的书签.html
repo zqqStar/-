@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+        }
+
+        section {
+            width: 200px;
+            height: 300px;
+            position: relative;
+            perspective: 1000px;
+            margin: 0px auto;
+        }
+
+        .l {
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            left: 0;
+            top: 50px;
+            opacity: 0.4;
+            transform-origin: 0 100%;
+
+        }
+
+        .d1 {
+            background-color: white;
+            transform: rotateY(0deg);
+        }
+
+        .d2 {
+            background-color: red;
+            transform: rotateY(-10deg);
+        }
+
+        .d3 {
+            background-color: yellowgreen;
+            transform: rotateY(-20deg);
+
+        }
+
+        .d4 {
+            background-color: green;
+            transform: rotateY(-30deg);
+
+            color: purple;
+            opacity: 0.5;
+        }
+
+        .d5 {
+            background-color: purple;
+            transform: rotateY(-40deg);
+            transition: all 5s;
+        }
+
+        .d5:active {
+            transform: rotateY(-120deg);
+        }
+
+        .r1 {
+            font-size: 30px;
+            font-weight: 700;
+            color: turquoise;
+            opacity: 0.6;
+            padding-left: 20px;
+            padding-top: 30px;
+        }
+
+        .r2 {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+            font-weight: 600;
+            opacity: 0.6;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            top: 0;
+            margin: auto;
+        }
+
+        .r3 {
+            text-align: center;
+        }
+
+        span {
+            font-size: 10px;
+            color: white;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="d1 l"></div>
+
+        <div class="d2 l">
+            <span>3</span>
+        </div>
+
+        <div class="d3 l">
+            <span>2</span>
+        </div>
+
+        <div class="d4 l">
+            <p class="r3">卧虎藏龙</p>
+            <span>1</span>
+
+        </div>
+        <div class="d5 l">
+            <p class="r1">周润发</p>
+            <p class="r2">杨紫琼</p>
+        </div>
+    </section>
+</body>
+
+</html>

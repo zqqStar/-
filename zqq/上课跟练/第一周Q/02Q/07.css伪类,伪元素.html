@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* a:link{
+            background-color: pink;
+        } */
+        /* 可以直接使用选择器  选择到a标签进行设置 */
+        a{
+            font-size: 50px;
+        }
+        a:visited{
+            color: pink;
+        }
+
+        a:hover{
+            color: green;
+        }
+        a:focus{
+            color: yellow;
+        }
+        a:active{
+            color: gray;
+        }
+
+        div::first-letter{
+            color: hotpink;
+            font-size: 50px;
+        }
+        /* div::before{
+             
+        }
+        div::after{
+
+        } */
+        /* 伪类的顺序应为:link--visited--hover--focus--active */
+    </style>
+</head>
+<body>
+    <a href="http://www.4399.com">百度一下</a>
+    <div>abcd</div>
+</body>
+</html>

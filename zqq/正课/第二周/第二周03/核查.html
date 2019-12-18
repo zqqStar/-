@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* body{
+            background-color: seagreen;
+        }
+        .hide{
+            color: rgba(220, 120, 220, 0);
+            display: none;
+            visibility: hidden;
+            opacity: 0;
+        } */
+        /* main{
+            height: 100px;
+            border: 1px solid red;
+            display: flex;
+        }
+        div{
+            flex-basis: 200px;
+            border: 1px solid yellow;
+        }
+        #d2{
+            flex-grow: 1;
+            flex-shrink: 0;
+        } */
+        main{
+            display: flex;
+            height: 300px;
+            width: 300px;
+            border: solid 2px black;
+            font-size: 30px;
+            /* justify-content: space-between;
+            align-content: space-between; */
+            /* flex-wrap: wrap; */
+
+        }
+        div{
+            /* border: solid 1px red; */
+            height: 100px;
+            width: 100px;
+        }
+        .d1{
+            flex: none;
+        }
+        .d2{
+            flex-shrink: 1;
+        }
+        .d3{
+            flex-shrink: 2;
+        }
+        .d4{
+            flex-shrink: 3;
+        }
+        
+
+
+    </style>
+</head>
+
+<body>
+    <!-- <p>第一行</p>
+    <div class="hide">第二行</div>
+    <p>第三行</p> -->
+
+        <main>
+            <div class="d1">1</div>
+            <div class="d2">2</div>
+            <div class="d3">3</div>
+            <div class="d4">4</div>
+            
+            
+
+        </main>
+</body>
+
+
+</html>

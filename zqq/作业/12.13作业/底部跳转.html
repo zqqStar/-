@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="image/favicon.ico">
+    <title>底部跳转</title>
+    <link rel="stylesheet" href="bs/css/bootstrap.min.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        #BOX {
+            width: 540px;
+            height: 70px;
+            /* border: lightgreen solid 1px; */
+            position: absolute;
+            bottom: 0;
+
+        }
+        #rowone{
+            border-top: 1px solid lightgrey;
+        }
+
+        main {
+            width: 540px;
+            height: 1000px;
+            position: relative;
+            /* border: red solid 1px; */
+            box-shadow: 0 0 0 2px #a1a1a1;
+
+        }
+
+        .col-xs-3 {
+            /* border: red solid 1px; */
+            height: 70px;
+
+        }
+
+        .col-xs-3 a {
+            text-decoration: none;
+            color: grey;
+
+        }
+
+        .col-xs-3 a:hover {
+            color: #f56a00;
+        }
+        .col-xs-3 a:focus {
+            color: #f56a00;
+        }
+
+        .col-xs-3 img {
+            margin-top: 8px;
+        }
+
+        iframe {
+            width: 540px;
+            height: 930px;
+            position: relative;
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container" id="BOX">
+            <!-- 第一行 -->
+            <div class="row" id="rowone">
+                <div class="col-xs-3 text-center">
+                    <img src="image/page-item.png" alt="">
+                    <p><a href="首页.html" target="shopping">商城</a></p>
+                </div>
+
+                <div class="col-xs-3 text-center">
+                    <img src="image/page-item.png" alt="">
+                    <p><a href="商品分类.html" target="shopping">分类</a></p>
+                </div>
+
+                <div class="col-xs-3 text-center">
+                    <img src="image/page-item.png" alt="">
+                    <p><a href="购物车.html" target="_self">购物车</a></p>
+
+                </div>
+
+                <div class="col-xs-3 text-center">
+                    <img src="image/page-item.png" alt="">
+                    <p><a href="个人中心.html" target="shopping">服务</a></p>
+
+                </div>
+            </div>
+        </div>
+
+        <iframe src="首页.html" frameborder="0" name="shopping" scrolling="no"></iframe>
+    </main>
+
+
+    <script src="bs/js/jquery.min.js"></script>
+    <script src="bs/js/bootstrap.min.js"></script>
+</body>
+
+<html>

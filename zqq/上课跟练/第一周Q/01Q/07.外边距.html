@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        /*  margin  调整相邻标签之间的距离 */
+        width: 500px;
+        height: 200px;
+        background-color: pink;
+        /* margin :0 上右下左都是0 */
+        /* margin:0 10px  上下外边距为0,左右外边距为10px */
+        /* margin:0 50px 100px 10px  上边距0,左右外边距为100px,下边距为10px */
+        /* 定宽居中 */
+        margin: 0 auto;
+    }
+    span{
+        /* 需特别注意的是:行元素不能设置margin-top与margin-bottom(无效),但可以设置左右外边距 */
+        margin-top: 100px;
+    }
+        </style>
+</head>
+<body>
+    <div></div>
+    <span>1111</span>
+</body>
+</html>

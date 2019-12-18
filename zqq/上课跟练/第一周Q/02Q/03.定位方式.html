@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #d1{
+            position: relative;
+            top: 100px;
+            left: 50px;
+        }
+        #d2{
+            position: absolute;
+            top: 1px;
+            left: 1px;
+        }
+        nav{
+            height: 100px;
+            width: 50px;
+            background-color: green;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <!-- 定位方式 -->
+    <!-- 作用:布局页面
+    默认的定位方式为:static  静态的 只参与流式布局 不能设置位置 -->
+    <!-- 1.当元素的定位方式为 relative 相对
+            特点:1.相对于自身的位置而言
+                 2.原本的位置被保留
+                 3.没有脱离文档流
+                 4.对元素的微调 -->
+    <div id="d1">111</div>
+
+    <!-- 当元素的定位方式为 absolute 时:
+            特点:1.相对于谁?  相对于距离他最近的父元素为position为非static的元素  如果父元素的定位信息都为static,则相对于html标签  浏览器 
+                 2.原本的位置不保留,会被占用
+                 3.脱离了文档流 
+                当调整子元素的位置时,可以设置其为absolte  但父元素一般都是设置为relative
+            
+                块元素如果脱离了文档流,那么就不能参照福严肃的宽度定宽,所以脱离了文档流的块元素如果没有内容,则必须设置宽高.如果有内容,宽高都取决于内容.-->
+
+                
+    <div id="d2">222</div>
+    <div>333</div>
+        <!-- 3.当元素的定位方式为 fixed 时:
+        
+        -->
+
+        <!-- 导航条 -->
+    <nav></nav>
+
+   
+
+</body>
+</html>

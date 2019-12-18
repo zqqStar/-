@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        caption,
+        td,
+        th {
+            border: 1px solid pink;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        caption {
+            border-bottom: none;
+        }
+
+        th {
+            /* 只要第一行的单元格的宽度确定以后,它所在的一列的单元格宽度固定,无法单独修改 */
+            width: 100px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        /* tr { */
+            /*  设置tr时,需要设置table的  border-collapse 属性才有效果 */
+            /* border: 1px solid pink;
+        } */
+    </style>
+</head>
+
+<body>
+    <table>
+        <!--caption  标题  -->
+        <caption>课程表</caption>
+
+        <!-- thead   tbody -->
+        <!-- tr  行    -->
+        <!-- td  单元格 -->
+        <!-- th  单元格   文本会加粗和居中 -->
+        <tr>
+            <th>周一</th>
+            <th>周二</th>
+            <th>周三</th>
+            <th>周四</th>
+            <th>周五</th>
+            <th>周六</th>
+            <th>周日</th>
+        </tr>
+        <tr>
+            <!-- <td>英语</td>
+            <td>英语</td>
+            <td>英语</td>
+            <td>英语</td>
+            <td>英语</td> -->
+
+            <!-- row 行   行合并  指的是上下合并 -->
+            <!-- col 列   列合并  指的是左右合并 -->
+            <td colspan="5">英语</td>
+            <td rowspan="2">放假</td>
+            <td rowspan="2">放假</td>
+
+        </tr>
+        <tr>
+            <!-- <td>数学</td>
+            <td>数学</td>
+            <td>数学</td>
+            <td>数学</td>
+            <td>数学</td> -->
+            <td colspan="5">数学</td>
+        </tr>
+    </table>
+</body>
+
+</html>

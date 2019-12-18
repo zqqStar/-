@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人所得税</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var money = prompt("请输入您的薪资")
+    if (money <= 5000) {
+        document.write("未到纳税金额")
+    }
+
+    else if (money > 5000 && money <= 36000) {
+        var left = money - 5000;
+        // var rem=money-left*0.03;
+        document.write("您的薪资为:"+money+"元"+"<br>")
+        document.write("您的应税部分薪额为:" + left + "元"+"<br>");
+        document.write("您的纳税金额为:" + left * 0.03 + "元"+"<br>");
+        document.write("您的剩余金额为:" + (money - left * 0.03) + "元");
+    }
+    else {
+        document.write("不在目标范围内")
+    }
+</script>
+
+</html>

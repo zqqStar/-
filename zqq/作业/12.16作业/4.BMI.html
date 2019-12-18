@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BMI</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var height = prompt("请输入您的身高/m");
+    var weight = prompt("请输入您的体重/kg");
+    var solution = weight / (height * height);
+    if(solution<=18.4){
+        document.write("您的BMI值为:"+solution+",属于偏瘦");
+    }
+    else if(solution>=18.5&&solution<=23.9){
+        document.write("您的BMI值为:"+solution+",属于正常");
+
+    }
+    else if(solution>=24&&solution<=27.9){
+        document.write("您的BMI值为:"+solution+",属于过重");
+
+    }
+    else{
+        document.write("您的BMI值为:"+solution+",属于肥胖");
+
+    }
+</script>
+
+</html>

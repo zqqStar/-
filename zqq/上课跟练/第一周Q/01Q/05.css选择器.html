@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css选择器</title>
+    <style>
+        /* 标签名选择器会选中body中所有的该元素 */
+    div{
+        color: red;
+        /* 设置字体类型 */
+        font-family: 宋体;
+        /* 设置字体大小 */
+        font-size: 80px;
+        /* 设置字体粗细 */
+        font-weight: normal;
+        /* 设置字体样式 */
+        font-style: italic;
+        /*设置文本装饰  */
+        text-decoration: underline;
+        /* 设置文本位置 */
+        text-align: center;
+        /* 文本缩进 */
+        text-indent: 2em;
+    }
+    #blue{
+        color: blue;
+    }
+    .green{
+        color: green;
+    }
+    .green.small{
+        font-size: 50px;
+    }
+    .small{
+        font-size: 100px;
+    }
+    
+    </style>
+</head>
+<body>
+    <!-- id  identify  标识符   一般标识符 是唯一的 -->
+    <div id="blue">111</div>
+    <!-- class 类 类:具有相同属性和行为的集合 抽象概念 -->
+    <!-- 一个class 可以拥有多个值  用空格来区分 -->
+    <div class="green small">222</div>
+    <div class="green big">333</div>
+    <div>444</div>
+    <div class="small">555</div>
+</body>
+</html>

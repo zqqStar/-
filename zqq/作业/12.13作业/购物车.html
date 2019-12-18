@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="icon" href="image/favicon.ico">
+    <link rel="stylesheet" href="bs/css/bootstrap.min.css">
+    <style>
+        #BOX {
+            width: 540px;
+            height: 1000px;
+            border: orange 1px solid;
+        }
+
+        #rowone {
+            width: 540px;
+            height: 64px;
+            background-color: #f5f5f5;
+
+        }
+
+        #jiantou {
+            width: 30px;
+            position: relative;
+            top: 20px;
+        }
+
+        #self span {
+            font-size: 20px;
+            position: relative;
+            top: 20px;
+            bottom: 20px;
+        }
+
+        .glyphicon.glyphicon-search.big {
+            position: relative;
+            top: 20px;
+            bottom: 20px;
+            left: 40px;
+            color: #999999;
+            font-size: 30px;
+        }
+
+        /* 第二行 */
+
+        #rowtwo {
+            height: 173px;
+            /* border: 1px solid red; */
+        }
+
+        #wenzi {
+            top: 35px;
+        }
+
+        /* 符号 */
+        .input-group.haha {
+            width: 150px;
+            height: 50px;
+            margin-top: -5px;
+        }
+
+        .width {
+            width: 50px;
+            height: 50px;
+        }
+
+        #jian,
+        #jia,
+        #num {
+            font-size: 25px;
+        }
+
+        #jian {
+            background-color: #fafafa;
+        }
+
+        .glyphicon.glyphicon-trash {
+            margin-top: -30px;
+            font-size: 25px;
+            color: lightgray;
+        }
+
+        /* 意外险 */
+        #rowfour {
+            width: 540px;
+            padding: 15px;
+            background-color: #f6f6f6;
+            border: white 15px solid;
+            margin-top: -15px;
+
+
+        }
+
+        #acco {
+            font-size: 20px;
+            position: relative;
+            top: 5px;
+        }
+
+        hr {
+            margin-top: 0;
+        }
+
+        .media-body a {
+            font-size: 20px;
+            position: relative;
+            top: 5px;
+            color: #fe5d4b;
+        }
+
+        /* 温馨 */
+        #rowfive {
+            height: 55px;
+        }
+
+        #com {
+            font-size: 18px;
+            color: #adadad;
+            text-indent: 1em;
+        }
+
+        /* 一 */
+        #rowsix {
+            border-top: 15px solid #f5f5f5;
+        }
+
+        #list {
+            padding: 0;
+        }
+
+        .list-group-item {
+            height: 60px;
+            font-size: 18px;
+            color: #6d6d6a;
+            padding: 0;
+            text-indent: 1em;
+
+        }
+
+        li>span {
+            line-height: 60px;
+
+        }
+
+        .list-group-item span {
+            margin-left: 10px;
+        }
+
+        #rowseven {
+            /* border: 1px solid red; */
+            height: 90px;
+            position: relative;
+            top: 120px;
+
+        }
+
+        #three {
+            /* border: 1px solid red; */
+            height: 90px;
+
+        }
+
+        #all {
+            font-size: 15px;
+            margin-top: 20px;
+        }
+
+        .glyphicon.glyphicon-chevron-right {
+            font-size: 20px;
+            color: lightgrey;
+            float: right;
+            padding-right: 20px;
+            padding-top: 20px;
+            padding-bottom: 18px;
+
+        }
+
+        li>span:nth-of-type(2) {
+            border-left: 1px solid lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="BOX">
+        <!-- 第一行 -->
+        <div class="row" id="rowone">
+            <div class="col-xs-4">
+                <a href=""> <img src="image/icon-back.png" alt="" id="jiantou"></a>
+            </div>
+
+            <div class="col-xs-4 text-center" id="self">
+                <span>购物车</span>
+            </div>
+
+            <div class="col-xs-4 text-center">
+                <span class="glyphicon glyphicon-search big"></span>
+            </div>
+        </div>
+
+        <!-- 第二行 -->
+        <div class="row" id="rowtwo">
+            <div class="col-xs-12">
+                <div class="media">
+                    <div class="media-left media-top">
+                        <img src="image/xiaomishouji4c.jpg" class="media-object"
+                            style="width:180px;margin-top: 35px;margin-left: -30px;">
+                    </div>
+
+                    <div class="media-body" style="position: relative;" id="wenzi">
+                        <h4 class="media-heading">小米手机4c 全网通版 白色 16GB</h4>
+                        <p style="color: #adadad;">售价:1099元 合计:1099元</p>
+
+                        <!-- 加减号 -->
+                        <form class="bs-example bs-example-form" role="form">
+                            <div class="input-group haha">
+                                <span class="input-group-addon width" id="jian">-</span>
+                                <input type="text" class="form-control width text-center" placeholder="1" id="num">
+                                <span class="input-group-addon width" id="jia">+</span>
+
+                            </div>
+                            <span class="glyphicon glyphicon-trash pull-right"></span>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 意外险 -->
+        <div class="row" id="rowfour">
+            <div class="media">
+                <div class="media-left media-middle">
+                    <img src="image/insurance.png" class="media-object" style="width:40px;margin-left: 15px;">
+                </div>
+                <div class="media-body">
+
+                    <span id="acco">意外保障服务 小米4c 95元/年 </span>
+                    <span class="pull-right"><a href="">购买服务</a></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 横线 -->
+        <hr>
+
+        <!-- 温馨提示 -->
+        <div class="row" id="rowfive">
+            <div class="con-xs-12">
+                <p id="com">温馨提示:产品是否购买成功,以最终下单为准,请尽快结算</p>
+
+            </div>
+        </div>
+
+        <!-- 输入框 -->
+        <form class="bs-example bs-example-form" role="form">
+
+            <!-- 一 -->
+            <div class="row" id="rowsix">
+                <div class="col-xs-12" id="list">
+                    <ul class="list-group">
+                        <li class="list-group-item"><input type="checkbox" value=""><span>+1元得小米礼品袋</span> <span
+                                class="glyphicon glyphicon-chevron-right"></span>
+                        </li>
+                        <li class="list-group-item"><input type="checkbox" value=""><span>+9.9元得彩虹五号电池</span>
+                            <span class="glyphicon glyphicon-chevron-right"></span></li>
+                        <li class="list-group-item"><input type="checkbox"
+                                value=""><span>+108元得ZONOKI中诺机运动蓝牙耳机</span><span
+                                class="glyphicon glyphicon-chevron-right"></span>
+                        </li>
+                        <li class="list-group-item"><input type="checkbox" value=""><span>+5元得Type-C转接头</span><span
+                                class="glyphicon glyphicon-chevron-right"></span></li>
+                        <li class="list-group-item"><input type="checkbox" value=""><span>+19元得智能唤醒翻盖保护套</span><span
+                                class="glyphicon glyphicon-chevron-right"></span></li>
+                        <li class="list-group-item"><input type="checkbox" value=""><span>+12元得多彩便携USB线
+                                120cm</span><span class="glyphicon glyphicon-chevron-right"></span>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+            </div>
+        </form>
+
+        <!-- 底栏 -->
+        <div class="row text-center" id="rowseven">
+            <div class="col-xs-4" id="three">
+                <p id="all" class="text-center">共一件 金额:</p>
+                <span style="font-size: 20px;color: #ff5722;" class="text-center">1099 </span>
+                <span>元</span>
+            </div>
+            <div class="col-xs-4" id="three" style="background-color: #f4f4f4;">
+                <p style="font-size: 20px; margin-top: 20px;padding: 12px;" class="text-center">继续购物</p>
+            </div>
+            <div class="col-xs-4" id="three" style="background-color: #ff5722;">
+                <p style="font-size: 20px; padding-top: 30px;color: white;" class="text-center">去结算</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="bs/js/jquery.min.js"></script>
+    <script src="bs/js/bootstrap.min.js"></script>
+</body>
+
+<html>

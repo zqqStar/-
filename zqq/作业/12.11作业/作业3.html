@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作业3</title>
+    <link rel="stylesheet" href="bs/css/bootstrap.min.css">
+    <style>
+        body {
+            width: 100%;
+        }
+
+        #logo {
+            position: relative;
+            top: -20px;
+        }
+
+        #fangdajing {
+            position: relative;
+            right: 30px;
+            background-color: #052f7b;
+            color: white;
+            padding: 5px;
+            border-radius: 50%;
+        }
+
+        #news {
+            float: left;
+            margin: 5px;
+        }
+
+        #READ {
+            font-size: 10px;
+            color: #668c9f;
+            margin: 0;
+        }
+
+        #hei {
+            font-weight: 800;
+        }
+
+        p {
+            text-indent: 2em;
+            font-size: 12px;
+
+        }
+
+        hr {
+            width: 100%;
+            border: 1px dotted gray;
+            border-top: none;
+            margin-top: 30px;
+            margin-bottom: 12px;
+        }
+
+        #bottom {
+            display: inline;
+            font-weight: 800;
+            color: #7b8e9a;
+            margin-top: 0;
+
+        }
+
+        #riqi {
+            font-size: 12px;
+            float: right;
+        }
+
+        #table tr td {
+            border: none;
+        }
+
+        #panel,
+        #panel1,
+        #panel2 {
+            border: none;
+            position: relative;
+            top: -41px;
+            /* padding: 0;
+           margin: 0 2px; */
+        }
+
+        .panel-body {
+            border: 1px solid rgba(131, 131, 131, 0.4);
+        }
+
+        #bac {
+            background-image: url("nav-bg.png");
+            background-size: 100%;
+        }
+
+        .bian {
+            font-size: 12px;
+            color: #1d5187;
+        }
+
+        .all {
+            font-size: 12px;
+
+        }
+
+        #tou,
+        #tou2 {
+            color: white;
+            background-image: url("s-bg1.png");
+            width: 100%;
+        }
+
+        #tou1 {
+            color: white;
+            background-image: url("s-bg2.png");
+            width: 100%;
+        }
+
+        #big {
+            background-image: url("news.png");
+            background-size: 80%;
+
+        }
+
+        #abc {
+            border: 2px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-fixed-top" role="navigation" id="bac">
+        <div class="container-fluid">
+
+            <div class="container">
+                <div>
+                    <a class="navbar-brand" href="#"><img src="logo.png" id="logo" alt=""></a>
+                </div>
+
+                <ul class="nav navbar-nav  col-lg-6">
+                    <li class="active"><a href="#head">首页</a></li>
+                    <li><a href="#media">媒体中心</a></li>
+                    <li><a href="#head">关于我们</a></li>
+                    <li><a href="#thing">业务板块</a></li>
+                    <li><a href="#prodacation">产品服务</a></li>
+                </ul>
+
+                <form action="" class="navbar-form navbar-right">
+                    <input type="text" class="form-control">
+                    <span class=" glyphicon glyphicon-search" id="fangdajing"></span>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <img src="banner.png" class="img-responsive" alt="">
+
+    <div class="container">
+        <div class="panel panel-default col-lg-4" id="panel2">
+            <div class="panel-heading" id="tou">公司动态 <span class="navbar-right" id="MORE">+MORE</span></div>
+            <div class="panel-body">
+                <img src="news.png" alt="" id="news">
+                <h5 id="hei">政府部门参观研发中心</h5>
+                <p>5月16日,一场盛大的创维酷开手机手品牌启动暨新品发布经销商大会在深圳手石岩隆重召开...</p>
+                <span class="navbar-right" id="READ">READ MORE</span>
+                <hr>
+                <table class="table" id="table">
+                    <tr>
+                        <td class="bian">兰新高铁新疆段工程供应钢材逾70万吨</td>
+                        <td class="all">2012-12-20</td>
+                    </tr>
+                    <tr>
+                        <td class="all">全力以赴抢救伤员的同时深刻反思</td>
+                        <td class="all">2012-12-20</td>
+                    </tr>
+                    <tr>
+                        <td class="all">宝钢蝉联"中国最受尊敬的知识性大赛"</td>
+                        <td class="all">2012-12-20</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="panel panel-default col-lg-4" id="panel1">
+            <div class="panel-heading" id="tou1">研究与观点 <span class="navbar-right" id="MORE">+MORE</span></div>
+            <div class="panel-body">
+
+                <h5 id="hei">政府部门参观研发中心</h5>
+                <p>5月16日,一场盛大的创维酷开手机手品牌启动暨新品发布经销商大会在深圳手石岩隆重召开...</p>
+                <span class="navbar-right" id="READ">READ MORE</span>
+                <hr>
+                <h5 id="hei">政府部门参观研发中心</h5>
+                <p>5月16日,一场盛大的创维酷开手机手品牌启动暨新品发布经销商大会在深圳手石岩隆重召开...</p>
+                <span class="navbar-right" id="READ">READ MORE</span>
+            </div>
+
+        </div>
+
+
+        <div class="panel panel-default col-lg-4" id="panel">
+            <div class="panel-heading" id="tou2"> 产品与服务<span class="navbar-right" id="MORE">+MORE</span></div>
+            <div class="panel-body">
+                <img src="news.png" alt="" id="big">
+                <div class="panel panel-default">
+                    <div class="panel-heading col-lg-4">餐钢系列</div>
+                    <div class=" col-lg-4"></div>
+
+                    <div class="panel-heading col-lg-4">面板标题</div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading col-lg-4">餐钢系列</div>
+                    <div class="col-lg-4"></div>
+
+                    <div class="panel-heading col-lg-4">面板标题</div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <nav class="navbar navbar-fixed-bottom" role="navigation" id="abc">
+            <div class="container-fluid">
+
+                <div class="container">
+                    <div>
+                        <a class="navbar-brand" href="#">CopyRight</a>
+                    </div>
+                    <ul class="nav navbar-nav  col-lg-6 navbar-right">
+                        <li class="active"><a href="#head">首页</a></li>
+                        <li><a href="#media">媒体中心</a></li>
+                        <li><a href="#head">关于我们</a></li>
+                        <li><a href="#thing">业务板块</a></li>
+                        <li><a href="#prodacation">产品服务</a></li>
+                    </ul>
+
+
+        </nav>
+
+
+        <script src="bs/js/jquery.min.js"></script>
+        <script src="bs/js/bootstrap.min.js"></script>
+</body>
+
+</html>

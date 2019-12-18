@@ -1,0 +1,61 @@
+// 变量:使用一个具体的名称代表某一套具体的数据
+// 在less中,使用@开头代表定义一个具体的变量,使用:代表赋值
+// 值可以是颜色,长度或者是任意的css样式值
+@txtColor:red;
+// 在less里边,css选择器怎么访问,less一样(甚至是更简单)
+#tit{
+    color: @txtColor;
+}
+#list{
+    padding: 0;
+    background-color: @txtColor;
+    li{
+        color: blue;
+        font-size: 30px;
+    }
+}
+#t3{
+    text-align: center;
+    .line;
+}
+.line{
+    color: yellowgreen;
+    font-family: 仿宋;
+    font-weight: 900;
+}
+@baseColor:yellow;
+#p1{
+    background-color:@baseColor;
+}
+#p2{
+    background-color: lighten(@baseColor,-20%);
+}
+#pic{
+    width: 300px;
+    height: 300px;
+    background-image: url(5.jpeg);
+    background-size: 100%;
+}
+@fonthh:line-through;
+.d1{
+    text-decoration: @fonthh;
+}
+
+@ohdog:border;
+@style:1px solid green;
+@font:1px;
+#gg{
+    @{ohdog}:@style
+
+}
+
+@kunhhh:{background-color: red};
+@rose:{
+    width: 200px;
+    height: 200px;
+    border: @style;
+};
+#kun{
+    @kunhhh();
+    @rose();
+}

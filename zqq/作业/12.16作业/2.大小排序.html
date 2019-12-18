@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var a = prompt("请随机输入一个0~9的数字");
+    var b = prompt("请随机输入一个0~9的数字");
+    var c = prompt("请随机输入一个0~9的数字");
+    var y;
+    if (a < b) {
+        y = a;
+        a = b;
+        b = y;
+    }
+    if (a < c) {
+        y = a;
+        a = c;
+        c = y;
+    }
+    if (b < c) {
+        y = b;
+        b = c;
+        c = y;
+    }
+    document.write("三个数从大到小为:"+a+","+b+","+c)
+
+
+
+
+</script>
+
+</html>

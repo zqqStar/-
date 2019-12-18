@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var wan = Math.floor(Math.random() * 10);
+    var num = prompt("请输入您设定的数字")
+    num = num * 1;
+    if (num == wan) {
+        document.write("恭喜您猜对啦!")
+    }
+    else if (num > wan) {
+        document.write("数值过大");
+
+
+    }
+    else if(num < wan) {
+        document.write("数值过小");
+    }
+
+</script>
+
+</html>

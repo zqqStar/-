@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        section {
+            width: 420px;
+            height: 800px;
+            background-image: url(wo.jpeg);
+            background-size: 500px 800px;
+            margin: 50px auto;
+            color: #ffffff;
+
+        }
+
+        #head {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        #head1,
+        #head3 {
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        #head1 {
+            margin-left: 10px;
+        }
+
+        #head2 {
+            font-size: 18px;
+            margin-top: 10px;
+
+        }
+
+        #head3 {
+            margin-right: 10px;
+        }
+
+        #pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-image: url(sjl.jpg);
+            background-size: 100% 100%;
+            align-self: center;
+            margin: 80px auto;
+        }
+
+        #pwd,
+        #usear {
+            font-size: 25px;
+            margin-left: 50px;
+        }
+
+        .mar {
+            margin-bottom: 0;
+            font-size: 30px;
+
+        }
+
+        .gg {
+            width: 80%;
+            border-color: #ffffff;
+            opacity: 0.5;
+        }
+       
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #kuang {
+            font-size: 20px;
+            color: #ffffff;
+            background-color: transparent;
+            border: none;
+            padding-left: 10px;
+        }
+
+        #kuang2 {
+            font-size: 20px;
+            color: #ffffff;
+            background-color: transparent;
+            border: none;
+            padding-left: 10px;
+            background-image: url(yan.png);
+            background-repeat: no-repeat;
+            background-position: 100% 50%;
+            background-size: 30px;
+        }
+
+        /* #eye {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url(yan.png);
+            background-size: 100% 100%;
+            margin-bottom: -5px;
+            margin-right: -25px;
+        } */
+
+        #denglu {
+            width: 100px;
+            background-color: #33aa64;
+            padding: 10px;
+            margin-top: 80px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        #forget {
+            margin-top: 0;
+        }
+
+        .box2 {
+            width: 420px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+
+        }
+
+        #other {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .short {
+            width: 100px;
+            height: 1px;
+            background-color: #ffffff;
+            opacity: 0.5;
+        }
+
+        #foot {
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        .size {
+            width: 60px;
+            height: 60px;
+            background-size: 100% 100%;
+
+        }
+
+        .funny1 {
+            background-image: url(weibo.png);
+        }
+
+        .funny2 {
+            background-image: url(qq.png);
+        }
+
+        .funny3 {
+            background-image: url(weixin.png);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div id="head">
+            <span id="head1">返回</span>
+            <span id="head2">登录</span>
+            <span id="head3">注册</span>
+        </div>
+
+        <div id="pic"></div>
+
+        <main>
+            <div id="top">
+                <label for="kuang" id="usear">账号:</label>
+                <input type="text" id="kuang"><br>
+                <hr class="gg">
+            </div>
+
+            <div id="bottom">
+                <label for="kuang2" id="pwd">密码:</label>
+                <input type="password" id="kuang2">
+                <!-- <div id="eye"></div> -->
+                <hr class="gg">
+            </div>
+        </main>
+
+        <div class="box">
+            <p id="denglu">登录</p>
+            <p id="forget">忘记密码?</p>
+        </div>
+
+        <div class="box2">
+            <div id="left" class="short"></div>
+            <span id="other">其他登录方式</span>
+            <div id="right" class="short">
+            </div>
+        </div>
+
+        <div id="foot">
+            <div class="funny1 size"></div>
+            <div class="funny2 size"></div>
+            <div class="funny3 size"></div>
+        </div>
+    </section>
+
+</body>
+
+</html>

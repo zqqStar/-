@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>css选择器 </title>
+        <style>
+            /* 1.选择器大全 多种 */
+            /* 2.选择器优先级 */
+
+            /* 标签名选择会选中body中所有的该元素 */
+            div{
+                color: red;
+            }
+            /* id 选择器 */
+            /* # + idName{ 
+                样式
+            } */
+            #blue{
+                color: blue;
+            }
+            /* class选择器 
+            .+ className{
+                样式
+            } */
+            .green{
+                color: green;
+            }
+            /* 选中了class 为 green和small的元素 */
+            .green.small{
+                font-size: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- id identify 标识符   一般标识符 是唯一的 -->
+        <div id="blue">111111111</div>
+        <!-- class 类   类:具有相同属性和行为的集合 抽象概念 -->
+        <!-- 一个class 可以拥有多个值 用空格来区分 -->
+        <div class="green small">222222222</div>
+        <div class="green big">333333333</div>
+        <div>444444444</div>
+        <div class="small">55555555555</div>
+    </body>
+</html>
