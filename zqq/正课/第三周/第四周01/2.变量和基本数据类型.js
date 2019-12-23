@@ -22,7 +22,7 @@ var str ="ab\"\\c";
 console.log(str);
 // 布尔类型 用于记录一个真假  true代表真 false代表假 默认是false
 var flag =true;
-// js当中的基本数据类型有三类:数字类型，字符串类型 布尔类型
+// js当中的基本数据类型有三类:数字类型，字符串类型 布尔类型  null  undefined
 
 // var 弱引用类型  类型取决于赋的值 25整数
 /*

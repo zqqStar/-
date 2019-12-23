@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>排序</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var b = [];
+    // 找出10个不重复的100内的数字
+    for (i = 0; i < 10; i++) {
+        var num = Math.random() * 100;
+        num = Math.floor(num);
+        if (b.indexOf(num) == -1) {
+            b.push(num);
+        }
+        else {
+            i--;
+        }
+    }
+    // 对10个数进行从大到小排序
+    for(i=0;i<b.length-1;i++){
+        for(j=0;j<b.length-i-1;j++){
+            var tem;
+            if(b[j]<b[j+1]){
+                tem=b[j];
+                b[j]=b[j+1];
+                b[j+1]=tem;//使j[i]为最大值
+            }
+        }
+    }
+    document.write(b.join(" "));
+    
+
+
+
+</script>
+
+</html>

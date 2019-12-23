@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var count = 0;
+    var num = Math.ceil(Math.random() * 10);
+    console.log(num);
+
+    do {
+        count++;
+        var input = prompt("请输入你猜的数字");
+        if (input == num) {
+            if (count <= 2) {
+                alert("大神,猜对啦")
+                count = 6;
+
+            }
+            else {
+                alert("猜对啦")
+                count = 6;
+
+            }
+        }
+        else {
+            var flag = prompt("猜错了,是否要继续(y/n)");
+
+           
+         
+            if(flag == "y"){
+                alert("继续")
+            }
+            else{
+                count=6;
+            }
+          
+           
+        }
+    }
+    while (count < 6)
+
+</script>
+
+</html>

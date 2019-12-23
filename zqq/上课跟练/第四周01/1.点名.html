@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点名</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var obj = new Object();
+    obj = {
+        "旺财": 25,
+        "欢欢": 30,
+        "二五": 18,
+        "国庆": 45,
+        "猫咪": 36
+    }
+    var arr = [];
+    for (var key in obj) {
+        arr.push(key + ":" + obj[key]);
+    }
+
+
+    do {
+        var num = Math.ceil(Math.random() * 5);
+        alert(arr[num].split(":")[0]);
+        var start = confirm("是否要开始点名");
+
+    }
+    while (start)
+
+
+    
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 函数:预先封装好的  可以完成某种功能的一个代码块
+    // 固定写法:function   代表声明一个函数
+    // work  为函数的名称  随便写  一般用驼峰命名法
+    // function work() {
+    //     console.log("宝贝?")
+
+    // }
+    // 函数:用的时候,需要用那个函数直接调用函数名即可
+    // work();
+
+    // 当函数名()内有变量出现的时候,代表该函数是一个需要传参数的函数
+    // function setAge(age) {
+    //     console.log("宝贝是:"+age);
+
+    // }
+    // setAge(30);
+
+    // 多个参数之间用,分割
+    // var kong="";
+    // function people(name,age,sex) {
+    //     if(sex)
+    // }
+
+
+
+    // 
+    // function work(a,b) {
+    //     console.log(a+b);
+
+    // }
+    // sum();
+
+
+
+    // function getName() {
+    //     return "下呗";
+    // }
+
+    // console.log(getName());
+
+
+
+    // function sum2(a,b) {
+    //     return a+b;
+    //     var he=sum2(10,30);
+
+
+    // }
+
+    // console.log(he);
+
+
+    // function test(a) {
+    //     a=10;
+    //     return a
+    // }
+    // console.log(test(5));
+
+
+    // function test2() {
+    //   var a=test();
+    //   return a
+    // }
+    // console.log(test2());
+
+
+    // function sum2(a,b) {
+    //     return a+b;
+    // }
+    // function sum3(a,b,c) {
+
+    //     return sum2(sum2(a,b),c)
+    // }
+    // console.log(sum3(1,5,9));
+
+
+
+    function denglu(a, b) {
+        if (a == "admin") {
+            if (b == "123456") {
+                alert("登录成功")
+            }
+            else {
+                alert("密码错误")
+            }
+        }
+        else {
+            document.write("账号或密码错误");
+        }
+    }
+    var a = prompt("请输入账号");
+    var b = prompt("请输入密码");
+    denglu(a, b);
+
+</script>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 引用类型:
+    var obj;//只是常规的变量,因为没有赋值
+    obj=new Object();//new 开辟内存,Object()构造对象的函数
+    obj.name="zqq";//对象.属性(任意)
+    obj.age=30;
+    obj.sex="男";
+    console.log(obj.name);//属性赋值和常规变量赋值一样  调用时只需对象.属性名
+
+    //当对象的属性后边的赋值变成了函数的时候,那么可以把这个属性叫做对象的方法
+    obj2.eat=function(){
+        console.log("发的似乎");
+        
+    }
+    obj2.eat();//调用:对象名.方法名
+
+    var obj3={
+        //
+        name:"zqq",
+        major:"美女",
+        //对象里面的方法也是可以像单一的函数一样高度自定的
+        speak:function(){
+
+            console.log("哈哈哈");
+            
+        }
+    }
+    console.log ("一个叫做"+obj3.name+"的女孩,他的专业是"+obj3.major+",她准备"+obj3.speak+".");
+   
+    //对象其实就是一个容器,其中存着多条数据,数据在对象中用键值的形式出现
+
+    var phone={
+        brand:"xiaomi",
+        size:6.9,
+        RGM:"2.0",
+    }
+
+    //删除对象的某个属性
+    delete phone.RGM;
+    console.log(phone);
+
+
+    //对象的另一种访问方式
+    var man=new Object();
+    man.name="zqq";
+    man.age="1";
+    console.log(man["name"]);
+
+
+    //
+    superman.name="zqq";
+    //车的颜色  品牌
+    superman.car=new Object();
+    superman.car.brand="保时捷";
+    superman.car.color="黑色";
+    console.log("一个叫"+superman.name+"的人,开着一个交"+ superman.car.brand+",是"+superman.car.color);
+    
+
+    
+
+   
+
+
+    
+
+    
+</script>
+</html>

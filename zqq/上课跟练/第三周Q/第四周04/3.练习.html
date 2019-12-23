@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //弹出框输入数字的年份如2019，提示框打印出来贰零壹玖
+    var yearStr = prompt("请输入年份");
+    var allStr = "";
+    for (var i = 0; i < yearStr.length; i++) {
+        // console.log(typeof yearStr[i]);
+        // 如果条件唯一，该条件会有多个结果的时候可以使用switch
+        switch (yearStr[i]) {
+            // 代表一个条件的结果
+            case "0":
+                allStr += "零"
+                break;//一个case最好是配合一个break
+            case "1":
+                allStr += "壹"
+                break;
+            case "2":
+                allStr += "贰"
+                break;
+            case "3":
+                allStr += "叁"
+                break;
+            case "4":
+                allStr += "肆"
+                break;
+            case "5":
+                allStr += "伍"
+                break;
+            case "6":
+                allStr += "陆"
+                break;
+            case "7":
+                allStr += "柒"
+                break;
+            case "8":
+                allStr += "捌"
+                break;
+            case "9":
+                allStr += "玖"
+                break;
+            // 上述条件如果都不满足，那么会进入到default
+            default:
+                allStr = "年份不对"
+                break;
+        }
+    }
+    alert(allStr);
+
+</script>
+
+</html>

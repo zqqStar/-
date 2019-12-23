@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //     var str6 ="hello world";
+    // //    如果在分割的字符串中不写分隔符，则返回数组中原有的字符串
+    // // 如果分隔符是空字符串，则会将字符串两端分开
+    //    var num2 =str6.split("");
+    //    console.log(num2);
+
+
+    var input = prompt("请输入一句话");
+    function juZi() {
+        for (var i = 0; i < input.length; i++) {
+            var a = " ";
+            if (input[i] == a) {
+                var b = input.split(" ");
+                console.log(b);
+                var c = b.reverse();
+                var d = c.join("" + " ");
+                return d;
+            }
+        }
+            var b = input.split("");
+            console.log("******");
+            var e = b.reverse();
+            var d = e.join("");
+            return d;
+    }
+    console.log(juZi());
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var arr1=[1,2,3];
+    // push  相当于在数组的最后一位追加一个元素>>压栈
+    arr1.push(4);
+    console.log(arr1);
+    
+// pop 出栈  删除数组中最后一个元素,并且可以把删除的元素返回
+    arr1.pop();
+    console.log(arr1);
+
+    // 将一个元素添加到数组的最前端
+    arr1.unshift(9);
+    console.log(arr1);
+
+    // 删除,?
+    console.log(arr1.shift());
+    console.log(arr1);
+    
+    var arr2=["a","b","c","d","e","f"];
+    // splice 操作的起始索引
+
+    // arr2.splice(2,1);
+    arr2.splice(2,1,"w");
+    console.log(arr2);
+
+    // 反序
+    var arr3=[1,2,3,4,5,6,7,8,9];
+    arr3.reverse();
+    console.log(arr3);
+    
+    // 截取
+    var arr4=[1,2,3,4,5,6,7];
+    var arr5=arr4.slice(2,-4);
+    console.log(arr5);
+
+    var arr6=[1,2,3,4,5,6,7,8,9];
+    var ind=arr6.indexOf(5);
+    console.log(ind);
+
+
+    var arr7=["h","e","l","l","o",2,0,1,9];
+    var str=arr7.join("");
+    console.log(str);
+    
+    
+    
+</script>
+</html>

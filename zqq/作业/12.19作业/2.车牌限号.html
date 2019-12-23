@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var input = prompt("请输入车牌号");
+    function chePai(input) {
+        var b = input.split("");
+        // 获取车牌的最后一位数字
+        out:
+        for (var i = b.length - 1; i >= 0; i--) {
+            for (var j = 0; j < 10; j++) {
+                if (b[i] == j) {
+                    var e = b[i];
+                    break out;
+                }
+            }
+        }
+        // 获取今天的日期
+        var now = new Date();
+        var weekday = now.getDay();
+        // console.log(weekday);
+
+        // 判断车牌最后一位都在周几限行
+        switch (weekday) {
+            case 1:
+                switch (input) {
+                    case 1:
+                    case 6:
+                        return "禁行"
+                        break;
+
+                    default:
+                        return "可以行使";
+                }
+            case 2:
+                switch (input) {
+                    case 2:
+                    case 7:
+                        return "禁行"
+                        break;
+
+                    default:
+                        return "可以行使";
+                }
+            case 3:
+                switch (input) {
+                    case 3:
+                    case 8:
+                        return "禁行"
+                        break;
+
+                    default:
+                        return "可以行使";
+                }
+            case 4:
+                switch (input) {
+                    case 4:
+                    case 9:
+                        return "禁行"
+                        break;
+
+                    default:
+                        return "可以行使";
+                }
+            case 5:
+                switch (input) {
+                    case 5:
+                    case 0:
+                        return "禁行"
+                        break;
+
+                    default:
+                        return "可以行使";
+                }
+        }
+    }
+    chePai(input);
+
+</script>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>密码</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    var b = [];   
+    for (i = 0; i < 4; i++) {
+        var num = Math.random() * 10;
+        num = Math.floor(num);
+        if (b.indexOf(num) == -1) {
+            b.push(num);
+        }
+        else {
+            i--;
+        }
+    }
+    b = b.join("");
+    document.write(b)
+</script>
+
+</html>

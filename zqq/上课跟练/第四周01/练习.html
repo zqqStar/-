@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // var boy = new Object();
+    // boy.age = prompt("请输入年龄") * 1;
+
+    // function info(boy) {
+    //     if (boy.age <= 3) {
+    //         alert("婴儿");
+
+
+    //     }
+    //     else if (boy.age > 3 && boy.age < 10) {
+    //         alert("童年");
+
+    //     }
+    //     else if (boy.age > 10 && boy.age < 18) {
+    //         alert("青少年");
+
+    //     }
+    //     else {
+    //         alert("大叔")
+    //     }
+
+    // }
+    // console.log(info(boy));
+
+
+    var sman = new Object;
+    sman.name = "hhh";
+    sman.money = prompt("请输入你的资产");
+    sman.age = prompt("请输入你的年龄");
+
+
+    function xiangQin(man) {
+        var woman=new Object();
+
+        if (man.money <= 100000) {
+            return "不同意";
+        }
+        else if(man.money > 100000&&man.age<=30){
+            return "欧巴 撒拉嘿呦";
+
+        }
+        else if(man.money > 100000&&man.age>30&&man.age<=50){
+            return "大叔,我钟意你";
+
+        }
+        else if(man.money > 100000&&man.age>50&&man.age<=80){
+           woman.age=20;
+           woman.height="1.65米的美女";
+           return woman;
+
+        }
+    }
+    xiangQin(man);
+    if(woman!=undefined){
+        console.log("这是一个年芳:"+woman.age+"的女人");
+    }
+   
+    
+
+</script>
+
+</html>
