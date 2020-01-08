@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #box {
+            width: 1000px;
+            border: 1px solid black;
+            padding: 30px;
+        }
+
+        ul {
+            display: inline-block;
+
+            list-style: none;
+            font-size: 15px;
+        }
+
+        li {
+            display: inline-block;
+            padding-left: 10px;
+        }
+
+        .sign {
+            color: blue;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .xspan {
+            cursor: pointer;
+            color: red;
+            padding: 5px;
+            border: 1px solid red;
+
+        }
+
+        #choose li {
+            height: 50px;
+            border: 1px solid red;
+            line-height: 50px;
+            padding-right: 10px;
+            margin-right: 15px;
+        }
+
+        p {
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="box">
+        <div id="brand">
+            <span>品&emsp;&emsp;牌:</span>
+            <ul id="apple">
+                <li class="sign">苹果</li>
+                <li class="sign">小米</li>
+                <li class="sign">华为</li>
+                <li class="sign">联想</li>
+                <li class="sign">中兴</li>
+                <li class="sign">海信</li>
+                <li class="sign">苹果</li>
+                <li class="sign">小米</li>
+                <li class="sign">华为</li>
+                <li class="sign">联想</li>
+                <li class="sign">中兴</li>
+                <li class="sign">海信</li>
+                <li class="sign">苹果</li>
+                <li class="sign">小米</li>
+                <li class="sign">华为</li>
+                <li class="sign">联想</li>
+                <li class="sign">中兴</li>
+                <li class="sign">海信</li>
+            </ul>
+        </div>
+
+        <div id="price">
+            <span>价格范围:</span>
+            <ul>
+                <li class="sign">1~499</li>
+                <li class="sign">477~799</li>
+                <li class="sign">799~1099</li>
+                <li class="sign">1099~1799</li>
+            </ul>
+        </div>
+
+        <div id="system">
+            <span>操作系统:</span>
+            <ul>
+                <li class="sign">IOS</li>
+                <li class="sign">安卓</li>
+                <li class="sign">塞班</li>
+            </ul>
+        </div>
+
+        <div id="activity">
+            <span>优惠活动:</span>
+            <ul>
+                <li class="sign">存话费送手机</li>
+                <li class="sign">买手机送话费</li>
+                <li class="sign">老用户优惠购机(支持合约到期提前续约)</li>
+                <li class="sign">只买手机</li>
+            </ul>
+        </div>
+
+        <div id="specialty">
+            <span>特&emsp;&emsp;点:</span>
+            <ul>
+                <li class="sign">双卡双待</li>
+                <li class="sign">千元智能机</li>
+                <li class="sign">大屏(4.0寸以上)</li>
+            </ul>
+        </div>
+
+        <main id="choose">
+            <span>您已选择:</span>
+            <ul>
+                <li class="hide"><span class="hit"></span> <span class="xspan">X</span> </li>
+                <li class="hide"><span class="hit"></span> <span class="xspan">X</span> </li>
+                <li class="hide"><span class="hit"></span> <span class="xspan">X</span> </li>
+                <li class="hide"><span class="hit"></span> <span class="xspan">X</span> </li>
+                <li class="hide"><span class="hit"></span> <span class="xspan">X</span> </li>
+            </ul>
+            <p class="hide">一键清空</p>
+        </main>
+    </main>
+</body>
+<script>
+    var divList = document.querySelectorAll("#box div");
+    var ulList = document.querySelectorAll("div ul");
+    var spanList = document.querySelectorAll(".hit");
+    var liList = document.querySelectorAll("#choose li");
+    var xspanList = document.querySelectorAll(".xspan");
+    var p = document.querySelector("p");
+    var number = 0;
+    //遍历每一个ul  给每一个ul绑定事件监听
+    for (var i = 0; i < ulList.length; i++) {
+        ulList[i].index = i;
+        ulList[i].addEventListener("click", function (e) {
+            if (e.target.classList.contains("sign")) {
+                //遍历ul里边的每一个li,将每一个Li的颜色改为空
+                for (var j = 0; j < this.children.length; j++) {
+                    this.children[j].style.color = "";
+                }
+                //再单独将点击的li颜色改为红色
+                e.target.style.color = "red";
+            }
+            //让点击选择的文字出现在 li的第一个span 里("hit")
+            //ulList与spanList的length是一样长的 所以可以直接用ulList的length
+            spanList[this.index].textContent = e.target.textContent;
+            //if判断是为了???
+            if (liList[this.index].classList.contains("hide")) {
+                liList[this.index].classList.remove("hide");
+                number++;
+                clean();
+            }
+
+        });
+
+        //设置点击X时的事件
+        xspanList[i].num = i;
+        xspanList[i].onclick = function (e) {
+            liList[e.target.num].classList.add("hide");
+            for (var j = 0; j < ulList[this.num].children.length; j++) {
+                ulList[this.num].children[j].style.color = "";
+            }
+            number--;//每点掉一个X  number就减一,因为number纪律的是X的个数
+            clean();
+        }
+
+    }
+    p.onclick = function () {
+        //这一层遍历是指当点击P标签的时候,将每一个li标签添加hide使其消失
+        for (var j = 0; j < xspanList.length; j++) {
+            liList[j].classList.add("hide");
+            //第二次遍历是为了将每一个ul里的li的红色清除
+            for (var m = 0; m < ulList[j].children.length; m++) {
+                ulList[j].children[m].style.color = "";
+            }
+            number = 0;
+            clean();
+        }
+    }
+
+    //创建一个函数,关联"一键清除"
+    function clean() {
+        if (number >= 2) {
+            p.classList.remove("hide");
+        }
+        else {
+            p.classList.add("hide");
+
+        }
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //递归:函数自己调用自己,满足条件的时候自己会结束
+    // var i = 1;
+    // function f1() {
+    //     if (i <= 5) {
+    //         i++
+    //         f1();
+    //     }
+    //     console.log(i);
+
+    // }
+    // f1();
+
+    //阶乘1*2*3*4*........*10
+    var solution = 1;
+    var num = prompt("请输入你的数字")
+    function jieCheng() {
+        for (var i = 1; i <= num; i++) {
+            solution *= i
+        }
+        document.write(solution)
+    }
+    jieCheng();
+
+
+//递归的方法
+    function jc(n) {
+        if(n<=1){
+            return 1
+        }
+        else{
+            return n*jc(n-1);
+        }
+        
+    }
+</script>
+
+</html>

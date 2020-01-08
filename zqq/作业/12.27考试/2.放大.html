@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>放大</title>
+    <style>
+        div {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .photo {
+            width: 200px;
+            height: 200px;
+        }
+
+        .big {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="photo1.jpg" alt="" class="photo">
+        <img src="photo2.jpg" alt="" class="photo">
+        <img src="photo3.jpg" alt="" class="photo">
+        <img src="photo4.jpg" alt="" class="photo">
+    </div>
+
+
+
+
+</body>
+<script>
+    var imgList = document.getElementsByClassName("photo");
+    for (var i = 0; i < imgList.length; i++) {
+        imgList[i].onmousemove = function (e) {
+            // console.log(e);
+            var image = document.createElement("img");
+            document.body.appendChild(image);
+            image.className = "big";
+            var bigImg = document.getElementsByClassName("big")[0];
+
+            if (bigImg) {
+                document.body.removeChild(bigImg);
+            }
+            // console.log(e.target);
+
+            image.src = e.target.src;
+            image.style.left = 10 + e.clientX + "px";
+            image.style.top = e.clientY + "px";
+        }
+        imgList[i].onmouseleave = function (e) {
+            var bigImg = document.getElementsByClassName("big")[0];
+            document.body.removeChild(bigImg);
+        }
+    }
+
+
+</script>
+
+</html>

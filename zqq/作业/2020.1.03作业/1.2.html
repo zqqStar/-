@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .wrapper section {
+            border-bottom: 1px dotted gray;
+            overflow: hidden;
+            line-height: 50px;
+        }
+
+        section strong {
+            float: left;
+            width: 9%;
+            text-align: justify;
+        }
+
+        section ul {
+            width: 87%;
+            float: left;
+        }
+
+        section ul li {
+            display: inline-block;
+            padding: 0 10px;
+            color: blue;
+            cursor: pointer;
+            font-style: 14px;
+        }
+
+        .clear {
+            color: orangered;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        .clear a {
+            display: none;
+        }
+
+        section ul li.selected {
+            color: red;
+        }
+
+        .choosed span {
+            display: none;
+            line-height: 35px;
+            padding: 0 15px;
+            border: 1px solid olivedrab;
+            font-size: 14px;
+        }
+
+        .choosed i {
+            border: 1px solid olivedrab;
+            font-style: normal;
+            background-color: pink;
+            padding: 0 10px;
+            line-height: 25px;
+            margin-left: 15px;
+            display: inline-block;
+            2
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section>
+            <strong>品牌</strong>
+            <ul>
+                <li>苹果</li>
+                <li>小米</li>
+                <li>华为</li>
+                <li>联想</li>
+                <li>中兴</li>
+                <li>海信</li>
+                <li>苹果</li>
+                <li>小米</li>
+                <li>华为</li>
+                <li>联想</li>
+                <li>中兴</li>
+                <li>海信</li>
+                <li>苹果</li>
+                <li>小米</li>
+                <li>华为</li>
+                <li>联想</li>
+                <li>中兴</li>
+                <li>海信</li>
+            </ul>
+        </section>
+        <section>
+            <strong>价格范围:</strong>
+            <ul>
+                <li>1~499</li>
+                <li>477~799</li>
+                <li>799~1099</li>
+                <li>1099~1799</li>
+            </ul>
+        </section>
+
+        <section>
+            <strong>操作系统:</strong>
+            <ul>
+                <li>IOS</li>
+                <li>安卓</li>
+                <li>塞班</li>
+            </ul>
+        </section>
+
+        <section>
+            <strong>优惠活动:</strong>
+            <ul>
+                <li>存话费送手机</li>
+                <li>买手机送话费</li>
+                <li>老用户优惠购机(支持合约到期提前续约)</li>
+                <li>只买手机</li>
+            </ul>
+        </section>
+
+        <section>
+            <strong>特&emsp;&emsp;点:</strong>
+            <ul>
+                <li>双卡双待</li>
+                <li>千元智能机</li>
+                <li>大屏(4.0寸以上)</li>
+            </ul>
+        </section>
+
+        <section>
+            <strong>您已选择:</strong>
+            <div class="choosed">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <a href="" class="clear">一键清除</a>
+            </div>
+        </section>
+    </div>
+</body>
+<script>
+    //鼠标点击选项时,当前选择样式要发生改变其他不变
+    var sections = document.querySelectorAll("section");
+    var spans = document.querySelectorAll(".choosed span");
+    var aTag = document.querySelectorAll(".choosed a")[0];
+    for (var i = 0; i < sections.length - 1; i++) {
+        //lis 是 每个ul里的所有li
+        var lis = sections[i].children[1].children;
+        //给li绑定事件
+        for (var j = 0; j < lis.length; j++) {
+            //添加索引属性
+            lis[j].index = j;
+            lis[j].secIndex = i;
+            lis[j].onclick = function () {
+                var lisNow = this.parentNode.children;
+                for (var m = 0; m < lisNow.length; m++) {
+                    lisNow[m].className = "";
+                    this.className = "selected";
+                    spans[this.secIndex].innerHTML = this.innerHTML + "<i>X</i>";
+                    spans[this.secIndex].style.display = "inline-block";
+
+                    for (var n = 0; n < spans.length; n++) {
+                        var iTag = spans[n].children[0];
+                        if (iTag) {
+                            iTag.spanIndex = n;
+
+                            iTag.onclick = function (e) {
+                                this.parentNode.style.display = "none";
+                                this.parentNode.innerHTML = "";
+
+                                var secLis = sections[this.spanIndex].children[1].children;
+                                for (var k = 0; k < secLis.length; k++) {
+                                    secLis[k].className = "";
+                                }
+                                show();
+                            }
+                        }
+                    }
+                }
+                show();
+            }
+        }
+    }
+
+    function show() {
+        var iLength=document.querySelectorAll(".choosed i").length;
+        if(iLength>=2){
+            aTag.style.display="inline-block";
+
+        }
+        else{
+            aTag.style.display="none";
+
+        }
+    }
+    show();
+
+    aTag.onclick=function(){
+        e.preventDefault();
+        for(var i=0;i<spans.length;i++){
+            spans[i].style.display="none";
+            spans[i].innerHTML="";
+            var is=sections[i].children[1].children;
+            for(var j=0;i<is.length;j++){
+                is[j].className="";}
+
+        }
+        this.display.style="none";
+    }
+</script>
+
+</html>

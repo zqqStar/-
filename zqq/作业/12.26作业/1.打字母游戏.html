@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            border: 3px solid black;
+            border-radius: 50%;
+
+        }
+
+        #p1 {
+            margin: 0;
+            font-size: 100px;
+            line-height: 200px;
+        }
+
+        #p2 {
+            font-size: 25px;
+        }
+
+        .right {
+            animation: ani1 0.5s linear 1;
+        }
+
+        @keyframes ani1 {
+            from {
+                transform: scale(0);
+
+            }
+
+            to {
+                transform: scale(1);
+
+            }
+        }
+
+        .wrong {
+            animation: ani2 0.5s ease-in-out 1;
+
+        }
+
+        @keyframes ani2 {
+            0% {
+                color: black;
+                transform: translate(0, 0);
+
+            }
+
+            25% {
+                color: red;
+                transform: translate(-15px, 0);
+
+            }
+
+            50% {
+                color: red;
+                transform: translate(0, 0);
+
+            }
+
+            75% {
+                color: red;
+                transform: translate(15px, 0);
+
+            }
+
+            100% {
+                color: red;
+                transform: translate(0, 0);
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <main id="main">
+        <div id="box">
+            <p id="p1">K</p>
+        </div>
+        <p id="p2">正确:0,错误:0,正确率:0.0%</p>
+    </main>
+
+</body>
+<script>
+    var main = document.getElementById("main");
+    var box = document.getElementById("box");
+    var p1 = document.getElementById("p1");
+    var p2 = document.getElementById("p2");
+
+    //使p1随机出现26个字母中的一个
+    var arr = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    var str;
+
+    setInterval(function () {
+
+        function ziMu() {
+            for (var i = 0; i < 26; i++) {
+                var num = Math.floor(Math.random() * 26);
+                str = arr[num];
+            }
+            p1.textContent = str;
+        }
+        ziMu();
+        var right = 0;
+        var wrong = 0;
+
+
+        //键盘按下对应字母
+        var a = true;
+        document.body.onkeydown = function (e) {
+            console.log(e);
+            console.log(document.getElementById("p1").textContent.charCodeAt());
+
+
+
+            if (e.keyCode == document.getElementById("p1").textContent.charCodeAt()) {
+
+                p1.classList.add("right")
+                right++;
+                setTimeout(function () {
+                    p1.classList.remove("right");
+
+
+                }, 500);
+                ziMu();
+
+            }
+            else {
+                p1.classList.add("wrong");
+                wrong++;
+                setTimeout(function () {
+                    p1.classList.remove("wrong");
+
+                }, 500);
+
+
+            }
+
+            document.getElementById("p2").innerHTML = "正确:" + right + "个,错误:" + wrong + "个,正确率为:" + ((right / (right + wrong)) * 100).toFixed(1) + "%";
+
+        }
+    },3000);
+
+
+
+
+
+
+
+</script>
+
+</html>

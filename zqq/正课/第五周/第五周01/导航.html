@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,
+        #box1 {
+            height: 100%;
+            width: 100%;
+
+        }
+
+        #box2 {
+            border: 1px solid red;
+            height: 100px;
+            text-align: center;
+            font-size: 0;
+        }
+
+        #ipt {
+            width: 500px;
+            height: 30px;
+
+
+        }
+
+        a {
+            display: inline-block;
+            width: 70px;
+            height: 30px;
+            font-size: 15px;
+            padding-top: 6px;
+            background-color: #007f7f;
+        }
+        .fixed{
+            top: 0;
+            position: fixed;
+            height: 100px;
+            text-align: center;
+            font-size: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">
+        <h2>标题1</h2>
+        <h2>标题2</h2>
+        <div id="box2">
+            <input type="text" id="ipt">
+            <a href="">百度一下</a>
+        </div>
+        <p>第1行</p>
+        <p>第2行</p>
+        <p>第3行</p>
+        <p>第4行</p>
+        <p>第5行</p>
+        <p>第6行</p>
+        <p>第7行</p>
+        <p>第8行</p>
+        <p>第9行</p>
+        <p>第10行</p>
+        <p>第11行</p>
+        <p>第12行</p>
+        <p>第13行</p>
+        <p>第14行</p>
+        <p>第15行</p>
+        <p>第16行</p>
+        <p>第17行</p>
+        <p>第18行</p>
+        <p>第19行</p>
+        <p>第20行</p>
+        <p>第21行</p>
+        <p>第22行</p>
+        <p>第23行</p>
+        <p>第24行</p>
+        <p>第25行</p>
+        <p>第26行</p>
+        <p>第27行</p>
+        <p>第28行</p>
+        <p>第29行</p>
+        <p>第30行</p>
+        <p>第31行</p>
+        <p>第32行</p>
+        <p>第33行</p>
+        <p>第34行</p>
+        <p>第35行</p>
+    </div>
+</body>
+<script>
+    var a = document.getElementsByTagName("a")[0];
+    var h2=document.getElementsByTagName("h2")[0];
+    a.style.textDecorationLine = "none";
+    a.style.color = "white";
+
+    var box2 = document.getElementById("box2");
+    document.body.onscroll=function(e){
+       console.log("*-*******");
+       daoHang(box2);
+       
+    }
+    function daoHang(box){
+        if(box.offsetTop<=document.documentElement.scrollTop&&box.offsetTop!=0){
+            box.classList.add("fixed");
+            
+        }
+        else if(box.offsetTop==0) {
+            box.classList.remove("fixed");
+
+        }
+      
+    }
+
+
+</script>
+
+</html>

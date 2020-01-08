@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 600px;
+            height: 500px;
+            border: 1px solid red;
+            position: relative;
+        }
+        #box2{
+            width: 100%;
+            position: absolute;
+            z-index: 2;
+        }
+        #pro{
+            float: left;
+        }
+        #next{
+            float: right;
+        }
+        #imgList li,#spanList li{
+            list-style: none;
+        }
+       
+        #imgList{
+            
+            position: relative;
+        }
+        #spanList{
+            width: 100%;
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+        }
+        
+        .liList{
+           display: inline-block;
+           width: 15px;
+           height: 15px;
+           border-radius: 50%;
+           background-color: red;
+
+        }
+        img{
+            position: absolute;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="box2">
+            <span id="pro">上一页</span>
+            <span id="next">下一页</span>
+        </div>
+       
+
+        <ul id="imgList">
+            <li><img src="photo1.jpg" alt="" class="imgList"></li>
+            <li><img src="photo2.jpg" alt="" class="imgList"></li>
+            <li><img src="photo3.jpg" alt="" class="imgList"></li>
+            <li><img src="photo4.jpg" alt="" class="imgList"></li>
+            <li><img src="photo5.jpg" alt="" class="imgList"></li>
+            <li><img src="photo6.jpg" alt="" class="imgList"></li>
+        </ul>
+
+        <ul id="spanList">
+            <li><span class="liList"></span></li>
+            <li><span class="liList"></span></li>
+            <li><span class="liList"></span></li>
+            <li><span class="liList"></span></li>
+            <li><span class="liList"></span></li>
+            <li><span class="liList"></span></li>
+           
+            
+        </ul>
+    </div>
+</body>
+<script>
+
+</script>
+
+</html>

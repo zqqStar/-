@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日历</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #box1 {
+            width: 500px;
+            height: 560px;
+            /* border: 1px solid red; */
+            background-color: pink;
+            position: relative;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        th {
+            width: 100px;
+            height: 30px;
+            border: 1px solid white;
+        }
+
+        td {
+            width: 100px;
+            height: 60px;
+            border: 1px solid white;
+
+        }
+
+        #timeNow {
+            font-size: 50px;
+            color: white;
+            margin-top: 10px;
+            margin-left: 10px;
+
+        }
+
+        #timeDay {
+            color: green;
+            margin-bottom: 15px;
+            margin-left: 10px;
+
+        }
+
+        #monthNow {
+            margin-left: 10px;
+
+        }
+
+        #next {
+            position: absolute;
+            right: 0;
+            cursor: pointer;
+
+        }
+
+        #last {
+            position: absolute;
+            right: 80px;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">
+        <p id="timeNow">17:27:54</p>
+        <p id="timeDay">2019年12月31日,星期五</p>
+        <span id="monthNow">2019年4月</span>
+        <span id="last">上一月</span>
+        <span id="next">下一月</span>
+        <table>
+            <thead>
+                <tr>
+                    <th>星期日</th>
+                    <th>星期一</th>
+                    <th>星期二</th>
+                    <th>星期三</th>
+                    <th>星期四</th>
+                    <th>星期五</th>
+                    <th>星期六</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+
+    var timeNow = document.getElementById("timeNow");
+    var timeDay = document.getElementById("timeDay");
+    var monthNow = document.getElementById("monthNow");
+    var tdList = document.getElementsByTagName("td");
+    //设置一号重复定时器,每过一秒就刷新一次时分秒 年月日 星期
+    var first = setInterval(function () {
+        //获得当前动态时间
+        var now = new Date();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var second = now.getSeconds();
+
+        var second = second < 10 ? ("0" + second) : second;
+        var minute = minute < 10 ? ("0" + minute) : minute;
+        var hour = hour < 10 ? ("0" + hour) : hour;
+
+        timeNow.innerHTML = hour + ":" + minute + ":" + second;
+
+        //获得当前何年何月何日,星期几
+        year = now.getFullYear();
+        month = now.getMonth(); 
+        date = now.getDate();//日期
+        week = now.getDay();//拿到星期 0代表周日
+
+        var arr1 = ["日", "一", "二", "三", "四", "五", "六",]
+        timeDay.innerHTML = year + "年" + (month + 1) + "月" + date + "日,星期" + arr1[week];
+    }, 1000);
+
+
+    //.
+    var now1 = new Date();
+    var year1 = now1.getFullYear();
+    var month1 = now1.getMonth();
+
+    //设置二号重复定时器,
+    var second = setInterval(function () {
+        //设置年月
+        now1 = new Date();
+        year1 = now1.getFullYear();
+        month1 = now1.getMonth();  
+        monthNow.innerHTML = year1 + "年" + (month1 + 1) + "月"
+        number();
+    }, 1000);
+
+    //设置上一月 下一月按钮
+    var lastMonth = document.getElementById("last");
+    var nextMonth = document.getElementById("next");
+    lastMonth.onclick = function (e) {
+        clearInterval(second);
+        monthChangeLast();
+        
+    }
+    nextMonth.onclick = function (e) {
+        clearInterval(second);
+        monthChangeNext();
+  
+    }
+    //封装一个函数,设定月份的上一月
+    function monthChangeLast() {
+        if (month1 > 0) {
+            month1 -= 1;
+        }
+        else {
+            year1 -= 1;
+            month1 = 11;
+        }
+        number();
+        monthNow.innerHTML = year1 + "年" + (month1 + 1) + "月"
+    }
+
+    //封装一个函数,设定月份的下一月
+    function monthChangeNext() {
+        if (month1 >= 11) {
+            year1 += 1;
+            month1 = 0;
+        }
+        else {
+            month1 += 1;
+        }
+        number();
+        monthNow.innerHTML = year1 + "年" + (month1 + 1) + "月"
+    }
+
+    //设置对应的每个月
+    function number() {
+        //先将每个单元格的内容清空
+        for(var j=0;j<tdList.length;j++){
+            tdList[j].innerHTML="";
+        }
+        //future  为当月的第一天
+        var future = new Date(year1, month1, 1);
+        //future.getDay() 即num  得出来的是当月第一天为周几
+        var num = future.getDay();
+        //将每个月天数不同的月份进行分类
+        //一月31天的
+        if (month1 == 0 || month1 == 2 || month1 == 4 || month1 == 6 || month1 == 7 || month1 == 9 || month1 == 11) {
+            for (var i = 0; i < 31; i++) {
+                //
+                tdList[num + i].textContent = i + 1;
+                
+            }
+        }
+        //一月30天的
+        else if (month1 == 3 || month1 == 5 || month1 == 8 || month1 == 10) {
+            for (var i = 0; i < 30; i++) {
+                tdList[num + i].textContent = i + 1;
+            }
+        }
+        //特殊的2月
+        else {
+            //判断闰年与平年
+            if (year1 % 400 == 0 || year1 % 4 == 0 && year1 % 100 != 0) {
+                for (var i = 0; i < 29; i++) {
+                    tdList[num + i].textContent = i + 1;
+                }
+            }
+            else {
+                for (var i = 0; i < 28; i++) {
+                    tdList[num + i].textContent = i + 1;
+                }
+            }
+        }
+    }
+
+    //填充头尾
+    // function fill() {
+    //     if()
+    // }
+
+
+
+
+
+
+</script>
+
+</html>

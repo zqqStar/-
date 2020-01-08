@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100%;
+            display: flex;
+        }
+
+        #box1,
+        #box2 {
+            width: 463px;
+            height: 722px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        #box2 {
+            background-image: url("images/看图识字.png");
+            background-size: 100%;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            margin-top: 80px;
+        }
+
+        td {
+            width: 100px;
+            height: 150px;
+            vertical-align: bottom;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">
+        <img draggable="true" class="fruit" src="images/1.png" alt="">
+        <img draggable="true" class="fruit" src="images/2.png" alt="">
+        <img draggable="true" class="fruit" src="images/3.png" alt="">
+        <img draggable="true" class="fruit" src="images/4.png" alt="">
+        <img draggable="true" class="fruit" src="images/5.png" alt="">
+        <img draggable="true" class="fruit" src="images/6.png" alt="">
+        <img draggable="true" class="fruit" src="images/7.png" alt="">
+        <img draggable="true" class="fruit" src="images/8.png" alt="">
+        <img draggable="true" class="fruit" src="images/9.png" alt="">
+        <img draggable="true" class="fruit" src="images/10.png" alt="">
+        <img draggable="true" class="fruit" src="images/11.png" alt="">
+        <img draggable="true" class="fruit" src="images/12.png" alt="">
+        <img draggable="true" class="fruit" src="images/13.png" alt="">
+        <img draggable="true" class="fruit" src="images/14.png" alt="">
+        <img draggable="true" class="fruit" src="images/15.png" alt="">
+        <img draggable="true" class="fruit" src="images/16.png" alt="">
+    </div>
+    <div id="box2">
+        <table>
+            <tr>
+                <td draggable="true"></td>
+                <td draggable="true"></td>
+                <td draggable="true"></td>
+                <td draggable="true"></td>
+            </tr>
+            <tr>
+                <td draggable="true"></td>
+                <td draggable="true"></td>
+                <td draggable="true"></td>
+                <td draggable="true"></td>
+            </tr>
+            <tr>
+                <td draggable="true"></td>
+                <td draggable="true"></td>
+                <td draggable="true"></td>
+                <td draggable="true"></td>
+            </tr>
+            <tr>
+                <td draggable="true"></td>
+                <td draggable="true"></td>
+                <td draggable="true"></td>
+                <td draggable="true"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    div1 = document.getElementById("box1");
+    imgList = document.querySelectorAll(".fruit");
+    tdList = document.getElementsByTagName("td");
+    var moveImg;
+    //创建数组arr,使里边有乱序的1~16 数字
+    var arr = [];
+    for (var i = 0; i < imgList.length; i++) {
+        var index = Math.ceil(Math.random() * 16);
+        if (arr.indexOf(index) == -1) {
+            arr.push(index);
+        }
+        else {
+            i--;
+        }
+    }
+
+    for (var i = 0; i < imgList.length; i++) {
+        //取出的img为随机一个
+        imgList[i].src = "images/" + arr[i] + ".png";
+        imgList[i].num = i//事件中不能用i ,所以须单独设定
+        //拖拽开始
+        imgList[i].ondragstart = function (e) {
+            moveImg = e.currentTarget;
+            e.dataTransfer.effectAllowed = "move";
+            e.dataTransfer.setData(null, null);
+        }
+        //拖拽悬停(在td上悬停)
+        tdList[i].ondragover = function (e) {
+            e.preventDefault();
+        }
+
+        //拖拽放下
+        tdList[i].num = i+1;
+        tdList[i].ondrop = function (e) {
+            var a = moveImg.src.split("/");
+            a = a[a.length - 1];
+            a = a.split(".")[0];
+            console.log(a);
+            if (e.target.num == a) {
+                this.appendChild(moveImg);
+            }
+        }
+    }
+</script>
+
+</html>

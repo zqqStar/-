@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //延迟加载    
+    //1.要调用的函数   第二个是时间   以毫秒为单位  1s=1000ms
+    //1.延迟加载器
+    var timer = setTimeout(function () {
+        console.log("4秒时间到");
+
+    }, 4000);
+    //定时器创建以后一定要记得删除,否则消耗内存
+    function cancelTimer(){
+        //
+        cancelTimer(timer);
+        timer=null;
+    }
+    cancelTimer();
+
+    //2.重复定时器
+    setInterval(function(){
+        console.log("hhh");
+        
+    },1000);
+    function cancelTimer(){
+        //
+        cancelTimer(timer2);
+        timer=null;
+    }
+    setInterval(function(){
+        console.log("hhh");
+        
+    },1000);
+</script>
+
+</html>

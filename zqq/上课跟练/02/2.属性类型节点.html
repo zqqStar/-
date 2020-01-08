@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            color: red;
+
+        }
+        .kaiti{
+            font-family: "楷体";
+        }
+        .bgy{
+            background-color: yellow;
+        }
+        a{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.baidu.com" target="_blank" class="red kaiti">百度一下</a>
+</body>
+<script>
+    var a=document.getElementsByTagName("a")[0];
+    var attList=a.attributes;
+    for (var key in attList) {
+        console.log(attList[key].name);//name 是属性名  value  代表属性值
+        
+    }
+
+    a.setAttribute("target","_self");//属性有就代表修改
+    a.setAttribute("title","百度一下");//属性无就代表添加
+
+    a.removeAttribute("href");
+    a.classList.add("bgy");
+    alert(getComputedStyle(a).backgroundColor)
+
+
+</script>
+</html>

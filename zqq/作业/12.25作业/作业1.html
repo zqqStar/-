@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+
+        }
+
+        #box1 {
+            width: 700px;
+            height: 300px;
+            /* border: 1px solid white; */
+            margin: 300px auto;
+
+        }
+
+        #box2 {
+            width: 700px;
+            height: 200px;
+            /* border: 1px solid red; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">
+        <div id="box2">
+            <p id="top">123456</p>
+
+        </div>
+
+        <p id="bottom"></p>
+    </div>
+</body>
+<script>
+    var box1 = document.getElementById("box1");
+    var box2 = document.getElementById("box2");
+
+    var p1 = document.getElementById("top");
+    var p2 = document.getElementById("bottom");
+
+    p1 = document.getElementsByTagName("p")[0];
+    p2 = document.getElementsByTagName("p")[1];
+
+    p1.style.color = "#ffff00"
+    p1.style.fontSize = "100px";
+    p1.style.fontFamily = "Digital Dismay;";
+    p1.style.textAlign = "center"
+    p1.style.marginTop = "50px"
+    p1.textContent;
+
+
+
+    p2.style.color = "#007000";
+    p2.style.textAlign = "center";
+    p2.style.fontSize = "20px";
+    p2.style.lineHeight = "50px"
+
+    setInterval(function () {
+        
+        var now = new Date();
+        var year = now.getFullYear();//拿到当前的年份
+        var month = now.getMonth();//拿到当前的月份
+        var date = now.getDate();//日期
+        var day = now.getDay();//拿到星期 0代表周日
+        var hour = now.getHours();//拿到小时 0(午夜) ~~23
+        var minute = now.getMinutes();//分钟 返回值是0~~59 
+        var second = now.getSeconds();//秒数 返回值是0~~59
+        var arr=["日","一","二","三","四","五","六"];
+        day=arr[day];
+        p2.textContent = year + "年" + (month + 1) + "月" + date + "星期" + day;
+        p1.textContent=(hour<10?"0"+hour:hour)+":"+(minute<10?"0"+minute:minute)+":"+(second<10?"0"+second:second);
+    });
+
+
+
+
+
+
+
+</script>
+
+</html>

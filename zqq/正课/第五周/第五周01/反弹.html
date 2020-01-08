@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>弹弹乐</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            position: relative;
+        }
+
+        #box {
+            width: 70px;
+            height: 70px;
+            background-color: pink;
+            border-radius: 50%;
+            position: absolute;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+</body>
+<script>
+    var a = 20;
+    var b = 10;
+    var div = document.getElementById("box");
+    function move() {
+        div.style.left = div.offsetLeft + a + "px";
+        div.style.top = div.offsetTop + b + "px";
+        // requestAnimationFrame(move);
+        if (div.offsetLeft > window.innerWidth) {
+            a = -a;
+            requestAnimationFrame(move);
+
+        }
+
+        if (div.offsetTop > window.innerHeight) {
+            b = -b;
+            requestAnimationFrame(move);
+
+        }
+        if (div.offsetLeft <= 0) {
+            a = a;
+            requestAnimationFrame(move);
+
+        }
+        if (div.offsetTop <= 0) {
+            b = b;
+            requestAnimationFrame(move);
+
+        }
+    }
+    requestAnimationFrame(move);
+
+
+    // if (div.offsetTop)
+</script>
+
+</html>

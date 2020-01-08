@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="addr">河南-郑州</p>
+</body>
+<script>
+    // var provinceArr = ["河南", "湖南", "河北"];
+    // var cityArr = [["郑州", "开封", "洛阳"]
+    // ["长沙", "张家界", "湘潭"]
+    // ["长沙", "张家界", "湘潭"]
+    // ];
+
+
+var info=[
+    //封装三个对象,每个对象有一个name属性和一个
+    {
+        name:"河南",
+        cites:["郑州", "开封", "洛阳"]
+    },
+    {
+        name:"湖南",
+        cites:["长沙", "张家界", "湘潭"]
+    },
+    {
+        name:"河北",
+        cites:["石家庄", "保定", "邯郸"]
+    }
+]
+    var provinceSel = document.createElement("select");
+    for (var i = 0; i <info.length; i++) {
+        var option = document.createElement("option");
+        option.textContent =info[i].name;
+        provinceSel.appendChild(option);
+        provinceArr.num = i;
+    }
+    document.body.appendChild(provinceSel);
+    var citySel = document.createElement("select");
+    for (var j = 0; j < info[0].cites.length; j++) {
+        var option = document.createElement("option");
+        option.textContent =  info[0].cites[j];
+        citySel.appendChild(option);
+    }
+    document.body.appendChild(citySel);
+
+    //为省份绑定事件,切换数据
+    provinceSel.onchange = function (e) {
+        //先把右侧城市的select清空
+        citySel.innerHTML = "";
+        //先选择省份
+        var pro =info[provinceSel.selectedIndex];
+        //根据选择的省份  拿到对应的城市 进行数据替换
+        for (var j = 0; j < info[0].cites.length; j++) {
+            var option = document.createElement("option");
+            option.textContent = cityArr[provinceSel.selectedIndex];
+            citySel.appendChild(option);
+        }
+
+    }
+
+
+
+
+   
+
+</script>
+
+</html>

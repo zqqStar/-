@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //常用的修饰符有3种:i,m,g
+    //
+    var patten = /abc/i;
+
+    //第二种表达式的创建方法:使用构造函数进行创建
+    patten = new RegExp("abc", "i");
+    var str = "aabbcc";
+    str = "Abcaabbcc";
+    //提供了test方法来检测字符串
+    // console.log(patten.test(str));
+
+    //检索字符串是否以字母a开头  ^ 以什么开头
+    patten = /^a/;
+    patten = /^[abc]///代表以a或b或c任意开头均可 []代表字符集合
+    // console.log(patten.test("bac"));
+
+    //检测字符串中是否包含有某个字母
+    patten = /a/;//是否包含a
+    patten = /[a-z]/;//是否包含小写字母
+    patten = /[A-Z]/;//是否包含大写字母
+    patten = /[0-9]/;//是否包含0~9
+    patten = /[a-zA-Z0-9]/;//是否包含0~9
+    // console.log(patten.test("ABC"));
+
+    //检测字符串是否以字母开头
+    patten = /^[A-z]/;
+    // console.log(patten.test("5ABC"));
+    //检测字符串是否以字母结尾
+    patten = /^[A-z]$/;
+    // console.log(patten.test("5ABC"));
+
+    //检测字符出现的次数
+    patten = /aaaa/;
+    //两者等价
+    patten = /a{4}/;
+    // console.log(patten.test("ABC123aaaa"));
+
+    patten = /^a{4}$/
+    // console.log(patten.test("aaaa"));//true
+    patten = /^a{3,6}$/
+    // console.log(patten.test("aaa5151a"));//false
+
+
+    //手机号  长度11位 以1开头  第二位34578的任意一个  纯数字
+    var str = "18236930469a";
+    patten = /^1[34578]{1}[0-9]{9}$/;
+    // console.log(patten.test(str));
+
+    //
+    patten = /^[A-z][b][b]d{4}/
+    // console.log(patten.test("abbbddddw"));
+
+    patten = /^[a-z][0-9]{5}/;
+    // console.log(patten.test("aw55566"));
+    patten = /^[A-z][A-z0-9_\-\*\#]{5,15}/;
+    patten = /[\u4e00-\u9fa5]/;//检测内容是否为中文
+    patten = /(abc)?/;//
+    patten = /abc?/;//
+    patten = /[abc]?/;//
+    // console.log(patten.test("d"));
+
+
+    //邮箱
+    patten = /^[0-9A-z][0-9A-z]*(@163.com)$/
+    console.log(patten.test("drctrapa@163.com"));
+
+    //+代表匹配一位或者多位
+    //\w+  代表以数字 字母 下户线任意一种开头 多位的数字后边要跟@符号
+    var email=/^\w+@\w+\.\w+$/;
+    var str="abc345g,abc123abcfaks6789dassdas,a";
+    var abcReg=/\d{3}/g;
+    var value="";
+    var arr;
+    //exec  满足正则条件的str语句会截取出来返回
+    while(value=abcReg.exec(str)){
+        console.log(value);//数组
+        arr.push(value);
+        
+    }
+
+    //身份证号
+    patten = /^[0-9]{17}[0-9x]$/;
+    console.log(patten.test("541854155123698x"));
+
+
+</script>
+
+</html>

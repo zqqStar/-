@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    nav{
+        background-color: gray;
+        width: 60%;
+    }
+    ul{
+        height: 50px;
+        display: flex;
+        text-align: center;
+        line-height: 50px;
+        position: relative;
+        padding: 0;
+        margin: 0;
+
+    }
+    ul li{
+        list-style: none;
+        display: block;
+        width: 80px;
+        height: 50px;
+        text-align: center;
+
+    }
+    .liList{
+        z-index: 4;
+
+    }
+    li a{
+        text-decoration: none;
+        color: whitesmoke;
+
+    }
+    #first{
+        background-color: red;
+        opacity: 0.7;
+    }
+    .red{
+        background-color: red;
+    }
+    #special{
+        background-color: red;
+        position: absolute;
+        transition: all 0.5s;
+
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="liList" id="first"><a href="">首页</a></li>
+            <li class="liList"><a href="">国内</a></li>
+            <li class="liList"><a href="">国际</a></li>
+            <li class="liList"><a href="">军事</a></li>
+            <li class="liList"><a href="">财经</a></li>
+            <li class="liList"><a href="">互联网</a></li>
+            <li class="liList"><a href="">房产</a></li>
+            <li id="special"></li>
+        </ul>
+    </nav>
+</body>
+<script>
+    var liList=document.getElementsByClassName("liList");
+    var liSpecial=document.getElementById("special")
+    for(var i=0;i<liList.length;i++){
+        liList[i].index=i;
+        liList[i].onmouseenter=function(e){
+            mouseIn(e);
+        }
+        liList[i].onmouseleave=function(e){
+            mouseOut(e);
+        }
+    }
+    function mouseIn(e) {
+        liSpecial.style.width=e.target.offsetWidth+"px";
+        liSpecial.style.left=e.target.offsetLeft+"px";
+
+    }
+    function mouseOut(e) {
+        liSpecial.style.width=80+"px";
+        liSpecial.style.left=0+"px";
+
+    }
+</script>
+</html>

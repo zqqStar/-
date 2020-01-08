@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            position: relative;
+        }
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+</body>
+<script>
+    var div = document.getElementById("box");
+    var aniCode = null;
+    var angle=0;
+
+    function update(){
+       angle+=5;
+       div.style.transform ="rotate("+angle+"deg)";
+       aniCode= requestAnimationFrame(update);
+   }
+   update();
+
+    function move(x){
+        div.style.left=x.clientX+"px";
+        div.style.top=x.clientY+"px";
+        aniCode = requestAnimationFrame(update);
+
+    }
+    
+    move(e);
+
+
+</script>
+
+</html>

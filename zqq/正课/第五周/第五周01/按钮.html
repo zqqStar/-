@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 400px;
+            height: 50px;
+            text-align: center;
+        }
+        #box span{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background-color: pink;
+            border-radius:50% ;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <span class="button">1</span>
+        <span class="button">2</span>
+        <span class="button">3</span>
+        <span class="button">4</span>
+        <span class="button">5</span>
+        <span class="button">6</span>
+        <span class="button">7</span>
+        <span class="button">8</span>
+        <span class="button">9</span>
+        <span class="button">10</span>
+    </div>
+</body>
+<script>
+    var spanList=document.getElementsByClassName("button");
+    
+    for(var i=0;i<spanList.length;i++){
+        spanList[i].num=i+1;
+        spanList[i].onmousedown=function(e){
+            daYin(this);
+            
+        }
+    }
+    function daYin(obj){
+        console.log(obj.num);
+    }
+</script>
+</html> 

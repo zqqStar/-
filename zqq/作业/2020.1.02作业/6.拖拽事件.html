@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        li {
+            cursor: ns-resize;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <!-- 默认为false -->
+        <li draggable="true">html</li>
+        <li draggable="true">css</li>
+        <li draggable="true">js</li>
+        <li draggable="true">jq</li>
+    </ul>
+</body>
+<script>
+    var lis = document.getElementsByTagName("li");
+    //绑定脱宅事件
+    //1.记录当前拖拽的对象
+    //2.当放下的时候
+    var moveLi;
+    for (var i = 0; i < lis.length; i++) {
+        var li = lis[i];
+        li.ondragstart = function (e) {
+            console.log("开始拖拽");
+            //dataTransfer  属性定义操作的对象所允许的一个效果,move代表脱宅的时候数据也跟着移动
+            moveLi = e.currentTarget;
+            e.dataTransfer.effectAllowed = "move";
+            e.dataTransfer.setData(null, null);
+            //原来的位置需要清空,因为数据已经跟随移动走了
+        }
+        li.ondragover = function (e) {
+            console.log("拖拽悬停");
+            e.preventDefault();
+
+        }
+        li.ondragenter = function (e) {
+            console.log("拖拽进入");
+            //
+            e.currentTarget.style.borderBottom = "2px solid red"
+
+        }
+        li.ondragleave = function (e) {
+            console.log("拖拽离开");
+            //
+            e.currentTarget.style.borderBottom = "none"
+
+        }
+
+        li.ondrop = function (e) {
+            console.log("放下1:"+e.currentTarget.innerHTML);
+            console.log("放下2:"+moveLi.innerHTML);
+            
+            e.currentTarget.style.borderBottom="none";
+            if(moveLi==e.currentTarget)return
+            //交换数据
+            //1.首先把拖拽的li从ul里删除
+            //parentElement  返回元素所处的父元素对象
+            var ul=e.currentTarget.parentElement;
+            ul.removeChild(moveLi);
+            ul.insertBefore(moveLi,e.currentTarget.nextSibling);
+            //nextSibling  返回某个元素之后紧跟的节点
+        }
+    }
+</script>
+
+</html>

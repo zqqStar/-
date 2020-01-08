@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p class="line">第1行</p>
+        <p class="line">第2行</p>
+        <p class="line">第3行</p>
+    </div>
+</body>
+<script src="jquery.js"></script>
+<script>
+    var $box=$("#box");//等价于getElementById
+    var $pArr=$(".line");
+    console.log( $pArr.length);
+    //函数中的参数如果是一个原生对象的话,返回一个jq对象
+    //jq独享包含有这个原生对象的信息
+    console.log($(document.body));
+    
+    
+</script>
+</html>

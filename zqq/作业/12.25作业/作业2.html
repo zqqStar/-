@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* img{
+        transform: translate(20px,10px);
+    } */
+    </style>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            position: relative;
+        }
+
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+
+
+    var a = setInterval(function () {
+        for (var i = 0; i < 10; i++) {
+            var img = document.createElement("img");
+            document.body.appendChild(img);
+            img.src = "flake.png";
+            var num = Math.floor(Math.random() * 30) + 5;
+            var num1 = Math.floor(Math.random() * 100) + 300;
+            img.style.width = num + "px";
+            img.style.left= num1 + "px";
+            img.style.top=num1 + "px";
+
+           
+
+        }
+    }, 1000);
+
+
+
+</script>
+
+</html>

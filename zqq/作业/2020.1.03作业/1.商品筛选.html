@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #box {
+            width: 900px;
+            /* height: 500px; */
+            border: 1px solid black;
+            padding: 30px;
+        }
+
+        h3 {
+            display: inline-block;
+            width: 100px;
+            margin-right: 20px;
+
+        }
+
+        #box #apple {
+            border-bottom: none;
+            display: inline-block;
+            width: 700px;
+            line-height: 40px;
+        }
+
+        span {
+            color: blue;
+            margin-right: 25px;
+        }
+
+        #box div {
+            padding: 8px;
+            border-bottom: 1px dotted gray;
+
+        }
+
+        #choose h3 {
+            padding: 8px;
+        }
+
+        .xspan {
+            padding: 10px;
+            color: red;
+            cursor: pointer;
+            border: 1px solid red;
+            font-size: 20px;
+            /* position: relative;
+            left: 80px; */
+        }
+
+        section {
+            display: inline-block;
+        }
+
+        .shide {
+            padding-left: 10px;
+            display: inline-block;
+            height: 60px;
+            border: 1px solid red;
+            line-height: 60px;
+
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .clean {
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+
+
+        }
+
+        h4 {
+            display: inline-block;
+            border: 1px solid black;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="brand">
+            <h3>品&emsp;&emsp;牌:</h3>
+            <section id="apple">
+                <span class="sign">苹果</span>
+                <span class="sign">小米</span>
+                <span class="sign">华为</span>
+                <span class="sign">联想</span>
+                <span class="sign">中兴</span>
+                <span class="sign">海信</span>
+                <span class="sign">苹果</span>
+                <span class="sign">小米</span>
+                <span class="sign">华为</span>
+                <span class="sign">联想</span>
+                <span class="sign">中兴</span>
+                <span class="sign">海信</span>
+                <span class="sign">苹果</span>
+                <span class="sign">小米</span>
+                <span class="sign">华为</span>
+                <span class="sign">联想</span>
+                <span class="sign">中兴</span>
+                <span class="sign">海信</span>
+            </section>
+        </div>
+        <div id="price">
+            <h3>价格范围:</h3>
+            <section>
+                <span class="sign">1~499</span>
+                <span class="sign">477~799</span>
+                <span class="sign">799~1099</span>
+                <span class="sign">1099~1799</span>
+            </section>
+
+        </div>
+        <div id="system">
+            <h3>操作系统:</h3>
+            <section>
+                <span class="sign">IOS</span>
+                <span class="sign">安卓</span>
+                <span class="sign">塞班</span>
+            </section>
+
+        </div>
+        <div id="activity">
+            <h3>优惠活动:</h3>
+            <section>
+                <span class="sign">存话费送手机</span>
+                <span class="sign">买手机送话费</span>
+                <span class="sign">老用户优惠购机(支持合约到期提前续约)</span>
+                <span class="sign">只买手机</span>
+            </section>
+
+        </div>
+        <div id="specialty">
+            <h3>特&emsp;&emsp;点:</h3>
+            <section>
+                <span class="sign">双卡双待</span>
+                <span class="sign">千元智能机</span>
+                <span class="sign">大屏(4.0寸以上)</span>
+            </section>
+
+        </div>
+        <main id="choose">
+            <h3>您已选择:</h3>
+            <span class="hide shide"><span>X</span> <span class="xspan">X</span> </span>
+            <span class="hide shide"><span>X</span> <span class="xspan">X</span> </span>
+            <span class="hide shide"><span>X</span> <span class="xspan">X</span> </span>
+            <span class="hide shide"><span>X</span> <span class="xspan">X</span> </span>
+            <span class="hide shide"><span>X</span> <span class="xspan">X</span> </span>
+            <h4 class="hide">一键清空</h4>
+
+        </main>
+    </div>
+</body>
+<script>
+    var divList = document.querySelectorAll("#box div");
+    var spanList = document.querySelectorAll("#choose>span");
+    var section = document.querySelectorAll("section");
+    var xspan = document.querySelectorAll(".xspan")
+    var h4 = document.getElementsByTagName("h4")[0];
+    var snum = 0;
+    for (var i = 0; i < divList.length; i++) {
+        divList[i].index = i;
+        divList[i].addEventListener("click", function (e) {
+            if (e.target.classList.contains("sign")) {
+                for (var j = 0; j < e.target.parentElement.children.length; j++) {
+                    e.target.parentElement.children[j].style.color = "";
+                }
+                e.target.style.color = "red";
+                
+                spanList[this.index].firstElementChild.textContent = e.target.textContent;
+                spanList[this.index].firstElementChild.style.color = "black";
+                // spanList[this.index].style.border = "1px solid red";
+                if(spanList[this.index].classList.contains("hide")){
+                    spanList[this.index].classList.remove("hide");
+                    snum++;
+                    show();
+                }
+            }
+        });
+        xspan[i].num = i;
+        xspan[i].onclick = function (e) {
+            // console.log(section[this.num].children.length);
+            for (var j = 0; j < section[this.num].children.length; j++) {
+                section[this.num].children[j].style.color = "";
+                spanList[this.num].classList.add("hide");
+            }
+            snum--;
+            show();
+        }
+
+        h4.onclick=function(){
+            for(var j=0;j<xspan.length;j++){
+                spanList[j].classList.add("hide");
+                for(var m=0;m<section[j].children.length;m++){
+                    section[j].children[m].style.color="";
+                }
+                snum=0;
+                show();
+            }
+
+        }
+    }
+
+    function show(){
+        if(snum>=2){
+            h4.classList.remove("hide");
+        }
+        else{
+            h4.classList.add("hide");
+
+        }
+
+    }
+
+
+
+
+
+
+</script>
+
+</html>

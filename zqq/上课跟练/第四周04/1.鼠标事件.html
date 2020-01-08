@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* #btn{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+
+    } */
+        #box {
+           
+            border: 1px solid red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 通过html便签的属性来进行事件绑定 -->
+    <!-- Onclick代表点击事件 -->
+
+    <!-- <button onclick="zanClick(event)" id="btn">赞</button> -->
+
+
+    <div id="box">
+        <img src="" alt="" id="one">
+    </div>
+
+
+
+
+</body>
+<script>
+    // function zanClick(e){
+    //     console.log("点击了:"+e);
+
+    // }
+
+    //
+    // var btn=document.getElementById("btn");
+    // btn.onclick=function(e){
+    //     console.log("这是通过js开执行的事件");
+
+    // }
+
+    // var box=document.getElementById("box");
+    // //当鼠标按下时事件会被触发(事件的执行需要一定的条件)
+    // box.onmousedown=function(e){
+    //     console.log("哈哈哈哈");
+
+    // }
+    // box.onmouseup=function(e){
+    //     console.log("zqq");
+
+    // }
+    // box.onmouseenter=function(e){
+    //     console.log("来喽");
+
+    // }
+    // box.onmouseleave =function(e){
+    //     console.log("走喽");
+
+    // }
+    // box.onmousemove=function(e){
+    //     console.log("跑步");
+
+    // }
+
+    var box = document.getElementById("box");
+    
+
+
+    box.onmousedown = function (e) {
+        var img = document.querySelector("img");
+        console.log("**************");
+        // var 
+        img.src = img.src == "sun.png" ? "earth.png": "sun.png";
+    }
+
+
+
+</script>
+
+</html>

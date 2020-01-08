@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+
+</body>
+<script>
+    var arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var arr2 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var m;
+    for (var i = 0; i < arr1.length; i++) {
+        document.write(arr1[i] + "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "<br>")
+    }
+   
+        function shuaXin() {
+            for (var i = 0; i < 25; i++) {
+                if (i < 10) {
+                    document.write(arr2[i] + "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "<br>" + "<br>")
+                }
+            }
+        }
+        shuaXin();
+  
+
+    document.documentElement.onscroll = function () {
+        if (document.documentElement.scrollTop ==
+            document.documentElement.scrollHeight - document.documentElement.clientHeight) {
+            setTimeout( timeout,3000);
+        }
+        
+
+    }
+</script>
+
+</html>

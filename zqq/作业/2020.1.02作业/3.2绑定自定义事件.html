@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+</body>
+<script>
+var box=document.getElementById("box");
+//myEvent 自定义事件
+box.addEventListener("myEvent3",function(e){
+    alert("自定义事件触发:"+e.detail);
+});
+//创建自定义事件的第一种方法
+// var myEvent=document.createEvent("CustomEvent");
+// /*
+// 1.代表事件的名称("电台名")
+// 2.设置事件是否可以冒泡
+// 3.设置事件是否可以阻止默认行为  是否可以用preventDefault
+// 4.事件的数据("广播的内容")
+// */ 
+// myEvent.initCustomEvent("张倩倩",true,true,"哈哈哈");
+
+// //派发   相当于div会接收到这个事件
+// box.dispatchEvent(myEvent);
+
+
+//第二种方法
+// var data={};
+// data.detail="zqq";
+// data.bubbles=true;
+
+// data.cancelable=true;
+// var myEvent2=new CustomEvent("88.1",data);
+// box.dispatchEvent("myEvent2");
+
+// box.onclick=myEvent3;
+// var data={};
+// data.detail="zqq";
+// data.bubbles=true;
+// data.cancelable=true;
+// var myEvent3=new CustomEvent("88.1",data);
+
+var myEvent3=document.createEvent("CustomEvent");
+myEvent3.initCustomEvent("myEvent3",true,true,"hello");
+box.onclick=function(){
+
+    box.dispatchEvent(myEvent3);
+}
+document.body.onkeydown=function(e){
+    console.log(e.key);
+    
+}
+
+
+
+
+
+
+
+</script>
+</html>

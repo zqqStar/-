@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .line{
+            color: red;
+        }
+        .item{
+            font-size: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <p class="line">第1行</p>
+    <p class="line">第2行</p>
+    <p class="line">第3行</p>
+    <input type="text" id="field">
+</body>
+<script src="jquery.js"></script>
+<script>
+    $("#box").html("<b>hello jquery</b>");
+    console.log($("#box").html());
+    $(".line").addClass("item");//添
+    $(".line").removeClass("item");//删
+    $(".line").toggleClass("item");//替换
+
+    $(".line").css("font-size","50px");
+    console.log($(".line").css("color"));
+
+    $("#box").css({
+        border:"1px solid red",
+        "background-color":"yellow",
+        padding:"10px"
+        
+    });
+    $("#field").attr("placeholder","请输入姓名");
+    console.log($("#field").attr("placeholder"));
+    $("#field").removeAttr("placeholder");//删
+    $("#field").prop("hehe",true)
+    console.log($("#field").prop("hehe"));
+
+    //
+    $("#field").val("初始内容");
+    console.log( $("#field").val());
+
+    $("#box").click(function(){
+        console.log("***");
+        
+    })
+   
+    
+
+    
+
+    
+    
+</script>
+</html>
